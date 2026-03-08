@@ -729,7 +729,7 @@ const DATA = [
     levels: ['tyt','ayt'],
     formulas: [
       { name: 'Basınç', eq: 'P = F / A', vars: [['P','basınç (Pa)'],['F','kuvvet (N)'],['A','alan (m²)']], note: '1 atm = 101 325 Pa ≈ 10⁵ Pa' },
-      { name: 'Sıvı Basıncı', eq: 'P = ρ · g · h', vars: [['ρ','yoğunluk (kg/m³)'],['h','derinlik (m)']], note: 'Aynı derinlikteki tüm noktalarda basınç eşittir.' },
+      { name: 'Sıvı Basıncı', eq: 'P = h · d · g', vars: [['P','Basınç'],['h','derinlik (m)']], note: 'Aynı derinlikteki tüm noktalarda basınç eşittir.' },
       { name: 'Pascal Yasası', eq: 'F₁/A₁ = F₂/A₂', vars: [], note: 'Hidrolik sistemlerin temelini oluşturur.' },
       { name: 'Arşimet Kuvveti', eq: 'Fₐ = ρ_sıvı · V_batan · g', vars: [['V_batan','sıvıya giren hacim']], note: 'Cisim tamamen batarsa V_batan = V_cisim.' },
       { name: 'Bernoulli', eq: 'P + ½ρv² + ρgh = sabit', vars: [], note: 'İdeal akışkanlar için enerji korunumu ilkesidir.' },
