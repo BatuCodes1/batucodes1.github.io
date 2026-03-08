@@ -23,6 +23,178 @@
     --ayt: #6af7c8;
   }
 
+  [data-theme="light"] {
+    --bg: #f4f4f8;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --border: #dcdce8;
+    --accent: #6355d8;
+    --accent2: #e84d73;
+    --accent3: #0db88a;
+    --text: #1a1a2e;
+    --muted: #7a7a9a;
+    --tyt: #c47d0a;
+    --ayt: #0db88a;
+  }
+
+  /* ─── TEMA SEÇİCİ ──────────────────────────────────── */
+  #themePicker {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  #themePicker.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  #themePicker.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .tp-title {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: #fff;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+  .tp-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-top: -1.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .tp-cards {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .tp-card {
+    width: 160px;
+    border-radius: 20px;
+    padding: 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                border-color 0.2s ease,
+                box-shadow 0.25s ease;
+    overflow: hidden;
+    background: none;
+    opacity: 0;
+    animation: tpCardIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  }
+  .tp-card.dark-card  { animation-delay: 0.15s; }
+  .tp-card.light-card { animation-delay: 0.28s; }
+  @keyframes tpCardIn {
+    from { opacity:0; transform:translateY(28px) scale(0.88); }
+    to   { opacity:1; transform:translateY(0) scale(1); }
+  }
+  .tp-card:hover  { transform: translateY(-8px) scale(1.04); }
+  .tp-card:active { transform: scale(0.97); }
+  .tp-card.dark-card  { box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+  .tp-card.light-card { box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+  .tp-card.dark-card:hover  { border-color:#7c6af7; box-shadow:0 16px 48px rgba(124,106,247,0.45); }
+  .tp-card.light-card:hover { border-color:#6355d8; box-shadow:0 16px 48px rgba(99,85,216,0.4); }
+
+  /* Dark preview */
+  .tp-preview {
+    width: 100%;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tp-preview-dark {
+    background: #0a0a0f;
+  }
+  .tp-preview-light {
+    background: #f4f4f8;
+  }
+  .tp-prev-bar {
+    height: 18px;
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 5px;
+  }
+  .tp-prev-bar-dark  { background: #12121a; border-color: #2a2a3e; }
+  .tp-prev-bar-light { background: #ffffff; border-color: #dcdce8; }
+  .tp-prev-dot { width: 5px; height: 5px; border-radius: 50%; }
+  .tp-prev-line {
+    margin: 6px 8px 3px;
+    border-radius: 3px;
+    height: 5px;
+  }
+  .tp-prev-line-dark  { background: #2a2a3e; }
+  .tp-prev-line-light { background: #dcdce8; }
+  .tp-prev-accent-dark  { background: #7c6af7; }
+  .tp-prev-accent-light { background: #6355d8; }
+  .tp-prev-card {
+    margin: 5px 8px;
+    border-radius: 6px;
+    height: 28px;
+    border: 1px solid;
+  }
+  .tp-prev-card-dark  { background: #1a1a26; border-color: #2a2a3e; }
+  .tp-prev-card-light { background: #ffffff; border-color: #dcdce8; }
+
+  .tp-card-label {
+    padding: 0.65rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tp-card-label-dark  { background: #12121a; color: #e8e8f0; }
+  .tp-card-label-light { background: #ffffff; color: #1a1a2e; }
+  .tp-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 20px;
+  }
+  .tp-badge-dark  { background: rgba(124,106,247,0.2); color: #7c6af7; }
+  .tp-badge-light { background: rgba(99,85,216,0.12); color: #6355d8; }
+
+  /* Tema toggle butonu header'da */
+  .theme-toggle {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--muted);
+    transition: all 0.2s, transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .theme-toggle:hover  { border-color: var(--accent); color: var(--accent); transform: rotate(20deg) scale(1.15); }
+  .theme-toggle:active { transform: scale(0.9); }
+  /* ────────────────────────────────────────────────── */
+
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
   html {
@@ -346,14 +518,15 @@
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.15s;
+    transition: all 0.18s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1);
     font-size: 0.875rem;
     color: var(--muted);
     margin-bottom: 2px;
     border: 1px solid transparent;
   }
-  .nav-item:hover { background: var(--card); color: var(--text); }
-  .nav-item.active { background: rgba(124,106,247,0.15); color: var(--accent); border-color: rgba(124,106,247,0.3); }
+  .nav-item:hover  { background: var(--card); color: var(--text); transform: translateX(3px); }
+  .nav-item:active { transform: scale(0.97) translateX(2px); }
+  .nav-item.active { background: rgba(124,106,247,0.15); color: var(--accent); border-color: rgba(124,106,247,0.3); transform: translateX(3px); }
   .nav-item .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
   .nav-item .nav-badge {
     margin-left: auto;
@@ -414,16 +587,6 @@
     gap: 1rem;
   }
 
-  .formula-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.2rem;
-    transition: all 0.2s;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
   .formula-card::before {
     content: '';
     position: absolute;
@@ -454,10 +617,17 @@
     cursor: pointer;
     color: var(--muted);
     font-size: 0.9rem;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
     padding: 0;
   }
-  .formula-name .bm-btn:hover, .formula-name .bm-btn.active { color: var(--tyt); }
+  .formula-name .bm-btn:hover  { color: var(--tyt); transform: scale(1.3) rotate(10deg); }
+  .formula-name .bm-btn:active { transform: scale(0.9); }
+  .formula-name .bm-btn.active { color: var(--tyt); animation: starPop 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+  @keyframes starPop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.6) rotate(20deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
 
   .formula-eq {
     font-family: 'Space Mono', monospace;
@@ -510,12 +680,25 @@
     font-size: 0.72rem;
     margin-top: 0.5rem;
     padding: 0;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s ease;
     display: flex;
     align-items: center;
     gap: 0.3rem;
   }
-  .expand-btn:hover { color: var(--accent); }
+  .expand-btn:hover  { color: var(--accent); transform: translateX(2px); }
+  .expand-btn:active { transform: scale(0.95); }
+
+  .formula-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    transition: border-color 0.2s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .formula-card:active { transform: scale(0.98); }
 
   /* PROGRESS BAR */
   .progress-section {
@@ -565,9 +748,10 @@
     font-size: 0.85rem;
     font-weight: 500;
     white-space: nowrap;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
   }
-  .quiz-btn:hover { opacity: 0.85; }
+  .quiz-btn:hover  { opacity:0.9; transform:scale(1.06); box-shadow:0 4px 18px rgba(124,106,247,0.4); }
+  .quiz-btn:active { transform:scale(0.96); }
 
   /* MODAL */
   .modal-overlay {
@@ -580,8 +764,19 @@
     z-index: 1000;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
-  .modal-overlay.open { display: flex; }
+  .modal-overlay.open {
+    display: flex;
+    animation: overlayIn 0.3s ease forwards;
+  }
+  .modal-overlay.closing {
+    animation: overlayOut 0.25s ease forwards;
+  }
+  @keyframes overlayIn  { from { opacity:0 } to { opacity:1 } }
+  @keyframes overlayOut { from { opacity:1 } to { opacity:0 } }
+
   .modal {
     background: var(--card);
     border: 1px solid var(--border);
@@ -590,7 +785,13 @@
     max-width: 480px;
     width: 90%;
     position: relative;
+    animation: modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards;
   }
+  .modal-overlay.closing .modal {
+    animation: modalOut 0.25s ease forwards;
+  }
+  @keyframes modalIn  { from { opacity:0; transform:scale(0.88) translateY(24px) } to { opacity:1; transform:scale(1) translateY(0) } }
+  @keyframes modalOut { from { opacity:1; transform:scale(1) translateY(0) } to { opacity:0; transform:scale(0.92) translateY(12px) } }
   .modal h3 { font-family: 'Crimson Pro', serif; font-size: 1.6rem; margin-bottom: 0.3rem; }
   .modal-q { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
   .modal-formula {
@@ -614,11 +815,20 @@
     font-size: 0.9rem;
     text-align: left;
     color: var(--text);
-    transition: all 0.15s;
+    transition: all 0.18s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    animation: optionIn 0.3s ease both;
   }
-  .quiz-option:hover { border-color: var(--accent); background: rgba(124,106,247,0.08); }
-  .quiz-option.correct { border-color: var(--ayt); background: rgba(106,247,200,0.1); color: var(--ayt); }
-  .quiz-option.wrong { border-color: var(--accent2); background: rgba(247,106,138,0.1); color: var(--accent2); }
+  .quiz-option:nth-child(1) { animation-delay: 0.05s; }
+  .quiz-option:nth-child(2) { animation-delay: 0.10s; }
+  .quiz-option:nth-child(3) { animation-delay: 0.15s; }
+  .quiz-option:nth-child(4) { animation-delay: 0.20s; }
+  @keyframes optionIn { from { opacity:0; transform:translateX(-12px); } to { opacity:1; transform:none; } }
+  .quiz-option:hover  { border-color:var(--accent); background:rgba(124,106,247,0.08); transform:translateX(4px); }
+  .quiz-option:active { transform:scale(0.97); }
+  .quiz-option.correct { border-color:var(--ayt); background:rgba(106,247,200,0.1); color:var(--ayt); animation:correctPop 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+  .quiz-option.wrong   { border-color:var(--accent2); background:rgba(247,106,138,0.1); color:var(--accent2); animation:wrongShake 0.4s ease; }
+  @keyframes correctPop  { 0%{transform:scale(1)} 50%{transform:scale(1.04)} 100%{transform:scale(1)} }
+  @keyframes wrongShake  { 0%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} 100%{transform:translateX(0)} }
   .quiz-result { text-align: center; padding: 1rem; font-size: 0.9rem; color: var(--muted); display: none; }
   .quiz-result.show { display: block; }
   .close-modal {
@@ -644,7 +854,9 @@
   .modal-btn.show { display: block; }
   .modal-btn.next { background: var(--accent); color: white; }
   .modal-btn.exit { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
-  .modal-btn:hover { opacity: 0.85; }
+  .modal-btn:hover  { opacity: 0.88; transform: translateY(-1px); }
+  .modal-btn:active { transform: scale(0.97); opacity: 1; }
+  .modal-btn { transition: opacity 0.2s, transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
 
   @media (max-width: 768px) {
     .main-layout { grid-template-columns: 1fr; padding: 0 0 3rem; }
@@ -687,6 +899,243 @@
   .logo, .header-right {
     transition: opacity 0.25s ease, width 0.3s ease;
   }
+
+  /* ─── FORMÜL DETAY MODALİ ─────────────────────────── */
+  #formulaModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
+  }
+  #formulaModal.open {
+    display: flex;
+    background: rgba(0,0,0,0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: fmOverlayIn 0.35s ease forwards;
+  }
+  #formulaModal.closing {
+    animation: fmOverlayOut 0.28s ease forwards;
+  }
+  @keyframes fmOverlayIn  { from { opacity:0 } to { opacity:1 } }
+  @keyframes fmOverlayOut { from { opacity:1 } to { opacity:0 } }
+
+  .fm-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem 2rem 1.5rem;
+    max-width: 520px;
+    width: 92%;
+    position: relative;
+    animation: fmBoxIn 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    overflow: hidden;
+  }
+  #formulaModal.closing .fm-box {
+    animation: fmBoxOut 0.26s ease forwards;
+  }
+  @keyframes fmBoxIn  {
+    from { opacity:0; transform: scale(0.6) translateY(40px); }
+    to   { opacity:1; transform: scale(1) translateY(0); }
+  }
+  @keyframes fmBoxOut {
+    from { opacity:1; transform: scale(1) translateY(0); }
+    to   { opacity:0; transform: scale(0.75) translateY(20px); }
+  }
+
+  /* Üst gradient şerit */
+  .fm-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    border-radius: 20px 20px 0 0;
+  }
+
+  .fm-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 32px; height: 32px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .fm-close:hover  { border-color: var(--accent2); color: var(--accent2); transform: rotate(90deg) scale(1.1); }
+  .fm-close:active { transform: scale(0.88); }
+
+  .fm-topic-badge {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .fm-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  .fm-eq {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.15rem;
+    background: rgba(124,106,247,0.08);
+    border: 1px solid rgba(124,106,247,0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    animation: fmEqIn 0.5s ease 0.15s both;
+  }
+  @keyframes fmEqIn {
+    from { opacity:0; transform: translateX(-10px); }
+    to   { opacity:1; transform: none; }
+  }
+
+  .fm-vars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+    animation: fmEqIn 0.5s ease 0.22s both;
+  }
+  .fm-var-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--accent3);
+    transition: transform 0.15s;
+  }
+  .fm-var-tag:hover { transform: translateY(-2px); }
+  .fm-var-tag span  { color: var(--muted); }
+
+  .fm-note {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    animation: fmEqIn 0.5s ease 0.3s both;
+  }
+
+  .fm-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    animation: fmEqIn 0.5s ease 0.35s both;
+  }
+  .fm-bm-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    display: flex; align-items: center; gap: 0.4rem;
+    transition: all 0.2s, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .fm-bm-btn:hover  { border-color: var(--tyt); color: var(--tyt); transform: scale(1.05); }
+  .fm-bm-btn:active { transform: scale(0.95); }
+  .fm-bm-btn.active { background: rgba(247,194,106,0.12); border-color: var(--tyt); color: var(--tyt); }
+  .fm-level-pills { display: flex; gap: 0.4rem; }
+  /* ────────────────────────────────────────────────── */
+  [data-theme="light"] body::before { opacity: 0.02; }
+
+  [data-theme="light"] header {
+    background: rgba(244,244,248,0.92);
+    border-bottom-color: var(--border);
+  }
+
+  [data-theme="light"] .formula-eq {
+    background: rgba(0,0,0,0.04);
+    color: var(--text);
+  }
+
+  [data-theme="light"] .formula-card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  [data-theme="light"] .formula-card:hover {
+    box-shadow: 0 8px 28px rgba(99,85,216,0.15);
+  }
+
+  [data-theme="light"] .quiz-banner {
+    background: linear-gradient(135deg, rgba(99,85,216,0.08), rgba(232,77,115,0.06));
+  }
+
+  [data-theme="light"] .modal {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+
+  [data-theme="light"] .modal-overlay {
+    background: rgba(0,0,0,0.4);
+  }
+
+  [data-theme="light"] .progress-bar-inner {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+
+  [data-theme="light"] #loader {
+    background: #f4f4f8;
+  }
+  [data-theme="light"] .loader-logo { color: var(--accent); }
+  [data-theme="light"] .loader-spinner::before { border-color: #dcdce8; }
+  [data-theme="light"] .loader-spinner::after  { border-top-color: #6355d8; border-right-color: #e84d73; }
+  [data-theme="light"] .loader-welcome { color: #0db88a; }
+
+  [data-theme="light"] .hero-glow {
+    background: radial-gradient(ellipse, rgba(99,85,216,0.12) 0%, transparent 70%);
+  }
+
+  [data-theme="light"] footer {
+    background: rgba(244,244,248,0.8);
+    border-top-color: var(--border);
+  }
+
+  [data-theme="light"] .nav-item:hover { background: #eeeef5; }
+  [data-theme="light"] .nav-item.active { background: rgba(99,85,216,0.1); }
+  [data-theme="light"] .var-tag { background: #eeeef5; }
+  [data-theme="light"] .sidebar { border-right-color: var(--border); }
+
+  /* Tema geçiş animasyonu */
+  html { transition: background 0.35s ease; }
+  body, header, .formula-card, .modal, .sidebar, .progress-section, .quiz-banner {
+    transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+  }
+  /* ────────────────────────────────────────────────── */
 </style>
 </head>
 <body class="loading">
@@ -699,6 +1148,50 @@
 </div>
 <!-- /LOADER -->
 
+<!-- TEMA SEÇİCİ -->
+<div id="themePicker">
+  <div class="tp-title">Tema Seçin</div>
+  <div class="tp-subtitle">Tercihini bir kez seç — kaydedilir</div>
+  <div class="tp-cards">
+
+    <button class="tp-card dark-card" onclick="applyTheme('dark')">
+      <div class="tp-preview tp-preview-dark">
+        <div class="tp-prev-bar tp-prev-bar-dark">
+          <div class="tp-prev-dot" style="background:#7c6af7"></div>
+          <div class="tp-prev-dot" style="background:#f76a8a"></div>
+          <div class="tp-prev-dot" style="background:#6af7c8"></div>
+        </div>
+        <div class="tp-prev-line tp-prev-line-dark" style="width:55%"></div>
+        <div class="tp-prev-line tp-prev-accent-dark" style="width:35%"></div>
+        <div class="tp-prev-card tp-prev-card-dark"></div>
+        <div class="tp-prev-card tp-prev-card-dark" style="height:18px;margin-top:3px"></div>
+      </div>
+      <div class="tp-card-label tp-card-label-dark">
+        🌙 Koyu <span class="tp-badge tp-badge-dark">Dark</span>
+      </div>
+    </button>
+
+    <button class="tp-card light-card" onclick="applyTheme('light')">
+      <div class="tp-preview tp-preview-light">
+        <div class="tp-prev-bar tp-prev-bar-light">
+          <div class="tp-prev-dot" style="background:#6355d8"></div>
+          <div class="tp-prev-dot" style="background:#e84d73"></div>
+          <div class="tp-prev-dot" style="background:#0db88a"></div>
+        </div>
+        <div class="tp-prev-line tp-prev-line-light" style="width:55%"></div>
+        <div class="tp-prev-line tp-prev-accent-light" style="width:35%"></div>
+        <div class="tp-prev-card tp-prev-card-light"></div>
+        <div class="tp-prev-card tp-prev-card-light" style="height:18px;margin-top:3px"></div>
+      </div>
+      <div class="tp-card-label tp-card-label-light">
+        ☀️ Açık <span class="tp-badge tp-badge-light">Light</span>
+      </div>
+    </button>
+
+  </div>
+</div>
+<!-- /TEMA SEÇİCİ -->
+
 <header>
   <div class="logo">φ<span>YKS</span>.fizik</div>
   <div class="header-center">
@@ -708,6 +1201,7 @@
     </div>
   </div>
   <div class="header-right">
+    <button class="theme-toggle" onclick="openThemePicker()" title="Tema Değiştir" id="themeToggleBtn">🌙</button>
     <div class="welcome-type" id="welcomeType"></div>
   </div>
 </header>
@@ -747,6 +1241,23 @@
     letter-spacing: 0.04em;
   ">Created by Batuhan</span>
 </footer>
+
+<!-- FORMÜL DETAY MODALİ -->
+<div id="formulaModal" onclick="closeFmModal(event)">
+  <div class="fm-box" id="fmBox">
+    <button class="fm-close" onclick="closeFmModal(null)">✕</button>
+    <div class="fm-topic-badge" id="fmBadge"></div>
+    <div class="fm-title" id="fmTitle"></div>
+    <div class="fm-eq" id="fmEq"></div>
+    <div class="fm-vars" id="fmVars"></div>
+    <div class="fm-note" id="fmNote"></div>
+    <div class="fm-footer">
+      <button class="fm-bm-btn" id="fmBmBtn" onclick="toggleFmBM()">⭐ Kaydet</button>
+      <div class="fm-level-pills" id="fmLevels"></div>
+    </div>
+  </div>
+</div>
+<!-- /FORMÜL DETAY MODALİ -->
 
 <div class="modal-overlay" id="quizModal">
   <div class="modal">
@@ -1054,7 +1565,7 @@ function buildContent() {
     formulas.forEach((f, fi) => {
       const fid = `${topic.id}-${fi}`;
       const bm = bookmarks.includes(fid);
-      html += `<div class="formula-card${bm?' bookmarked':''}" id="card-${fid}">
+      html += `<div class="formula-card${bm?' bookmarked':''}" id="card-${fid}" onclick="openFmModal('${topic.id}',${fi},event)">
         <div class="formula-name">
           ${f.name}
           <button class="bm-btn${bm?' active':''}" onclick="toggleBM(event,'${fid}')" title="Kaydet">⭐</button>
@@ -1210,7 +1721,12 @@ function nextQuiz() {
 }
 
 function closeQuiz() {
-  document.getElementById('quizModal').classList.remove('open');
+  const modal = document.getElementById('quizModal');
+  modal.classList.add('closing');
+  setTimeout(() => {
+    modal.classList.remove('open');
+    modal.classList.remove('closing');
+  }, 250);
 }
 
 // SEARCH
@@ -1240,6 +1756,148 @@ searchInput.addEventListener('blur', function() {
 buildSidebar();
 buildContent();
 
+// ─── FORMÜL DETAY MODALİ ─────────────────────────────
+let fmCurrentFid = null;
+
+function openFmModal(topicId, fi, e) {
+  if (e) e.stopPropagation();
+  const topic = DATA.find(t => t.id === topicId);
+  if (!topic) return;
+  const f = topic.formulas[fi];
+  if (!f) return;
+  fmCurrentFid = `${topicId}-${fi}`;
+
+  // İçerikleri doldur
+  document.getElementById('fmBadge').innerHTML = `${topic.icon} ${topic.title}`;
+  document.getElementById('fmTitle').textContent = f.name;
+  document.getElementById('fmEq').textContent = f.eq;
+
+  // Değişkenler
+  const varsEl = document.getElementById('fmVars');
+  if (f.vars.length > 0) {
+    varsEl.style.display = 'flex';
+    varsEl.innerHTML = f.vars.map(v =>
+      `<span class="fm-var-tag">${v[0]}<span> = ${v[1]}</span></span>`
+    ).join('');
+  } else {
+    varsEl.style.display = 'none';
+    varsEl.innerHTML = '';
+  }
+
+  // Not
+  const noteEl = document.getElementById('fmNote');
+  if (f.note) {
+    noteEl.style.display = 'block';
+    noteEl.textContent = f.note;
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  // Level pills
+  document.getElementById('fmLevels').innerHTML =
+    (topic.levels.includes('tyt') ? '<span class="level-pill tyt">TYT</span>' : '') +
+    (topic.levels.includes('ayt') ? '<span class="level-pill ayt">AYT</span>' : '');
+
+  // Bookmark durumu
+  const bm = bookmarks.includes(fmCurrentFid);
+  const bmBtn = document.getElementById('fmBmBtn');
+  bmBtn.className = 'fm-bm-btn' + (bm ? ' active' : '');
+  bmBtn.innerHTML = bm ? '⭐ Kaydedildi' : '⭐ Kaydet';
+
+  // Aç
+  const modal = document.getElementById('formulaModal');
+  modal.classList.remove('closing');
+  modal.style.display = 'flex';
+  requestAnimationFrame(() => modal.classList.add('open'));
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFmModal(e) {
+  if (e && e.target !== document.getElementById('formulaModal')) return;
+  const modal = document.getElementById('formulaModal');
+  modal.classList.remove('open');
+  modal.classList.add('closing');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    modal.classList.remove('closing');
+    document.body.style.overflow = '';
+  }, 280);
+}
+
+function toggleFmBM() {
+  if (!fmCurrentFid) return;
+  const bm = bookmarks.includes(fmCurrentFid);
+  if (bm) {
+    bookmarks = bookmarks.filter(b => b !== fmCurrentFid);
+  } else {
+    bookmarks.push(fmCurrentFid);
+  }
+  localStorage.setItem('phyBookmarks', JSON.stringify(bookmarks));
+
+  // Modal buton güncelle
+  const btn = document.getElementById('fmBmBtn');
+  const isNowBm = bookmarks.includes(fmCurrentFid);
+  btn.className = 'fm-bm-btn' + (isNowBm ? ' active' : '');
+  btn.innerHTML = isNowBm ? '⭐ Kaydedildi' : '⭐ Kaydet';
+
+  // Kart güncelle
+  const card = document.getElementById('card-' + fmCurrentFid);
+  const cardBtn = card ? card.querySelector('.bm-btn') : null;
+  if (isNowBm) {
+    card && card.classList.add('bookmarked');
+    cardBtn && cardBtn.classList.add('active');
+  } else {
+    card && card.classList.remove('bookmarked');
+    cardBtn && cardBtn.classList.remove('active');
+  }
+
+  // Sayaçlar
+  document.getElementById('bookmarkCount').textContent = bookmarks.length;
+  document.getElementById('navBmCount').textContent = bookmarks.length;
+  const total = DATA.reduce((s,t) => s + t.formulas.length, 0);
+  const bar = document.querySelector('.progress-bar-inner');
+  if (bar) bar.style.width = (bookmarks.length / total * 100) + '%';
+}
+
+// ESC tuşu ile kapat
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const fm = document.getElementById('formulaModal');
+    if (fm && fm.classList.contains('open')) closeFmModal(null);
+    else closeQuiz();
+  }
+});
+// ──────────────────────────────────────────────────────
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '');
+  localStorage.setItem('phyTheme', theme);
+  const btn = document.getElementById('themeToggleBtn');
+  if (btn) btn.textContent = theme === 'light' ? '☀️' : '🌙';
+  const picker = document.getElementById('themePicker');
+  if (picker) {
+    picker.classList.remove('visible');
+    picker.classList.add('hide');
+  }
+}
+
+function openThemePicker() {
+  const picker = document.getElementById('themePicker');
+  if (!picker) return;
+  picker.classList.remove('hide');
+  requestAnimationFrame(() => picker.classList.add('visible'));
+}
+
+// Sayfa açılınca kaydedilmiş temayı uygula
+(function () {
+  const saved = localStorage.getItem('phyTheme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : '');
+    const btn = document.getElementById('themeToggleBtn');
+    if (btn) btn.textContent = saved === 'light' ? '☀️' : '🌙';
+  }
+})();
+// ──────────────────────────────────────────────────────
+
 // ─── LOADER ───────────────────────────────────────────
 (function () {
   const duration = 3000 + Math.random() * 2000;
@@ -1257,7 +1915,7 @@ buildContent();
   }
   setTimeout(typeWelcome, 900);
 
-  // Süre bitince loader kapat, siteyi aç
+  // Süre bitince loader kapat
   setTimeout(function () {
     const loader = document.getElementById('loader');
     loader.classList.add('hide');
@@ -1265,7 +1923,7 @@ buildContent();
     document.body.classList.remove('loading');
     document.body.classList.add('site-reveal');
 
-    // Header'daki "Hoş Geldiniz" typewriter loader kapandıktan sonra
+    // Header'daki "Hoş Geldiniz" typewriter
     setTimeout(function () {
       const el = document.getElementById('welcomeType');
       const text = 'Hoş Geldiniz';
@@ -1281,6 +1939,19 @@ buildContent();
     }, 600);
 
     setTimeout(function () { loader.remove(); }, 900);
+
+    // Daha önce tema seçilmemişse tema seçiciyi göster
+    const savedTheme = localStorage.getItem('phyTheme');
+    if (!savedTheme) {
+      setTimeout(function () {
+        const picker = document.getElementById('themePicker');
+        if (picker) {
+          requestAnimationFrame(() => picker.classList.add('visible'));
+        }
+      }, 800);
+    }
+    // picker hiçbir zaman DOM'dan kaldırılmaz — buton her zaman çalışsın
+
   }, duration);
 })();
 // ──────────────────────────────────────────────────────
