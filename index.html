@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
+<html lang="tr" __gchrome_remoteframetoken="d8a481b0c76a0ae57a87b7b1b53f96c2"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0a0a0f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>YKS Fizik Formülleri</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Crimson+Pro:ital,wght@0,300;0,600;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0f;
@@ -1420,42 +1418,54 @@
 <body class="loading">
 
 <!-- LOADER -->
-<div id="loader">
-  <div class="loader-brand">
-    <div class="loader-phi">φ</div>
-    <div class="loader-name"><span class="loader-yks">YKS</span><span class="loader-dot-sep">.</span><span class="loader-fizik">fizik</span></div>
-  </div>
-  <div class="loader-spinner"></div>
-  <div class="loader-status">Yükleniyor<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></div>
-</div>
+
 <!-- /LOADER -->
 
 <!-- ADMİN PANELİ -->
-<div id="adminPanel">
+<div id="adminPanel" class="open">
   <div class="admin-header">
     <h1>φ<span>YKS</span>.fizik</h1>
     <span class="admin-badge">⚙️ Admin</span>
     <button class="admin-exit-btn" onclick="closeAdminPanel()">✕ Çıkış</button>
   </div>
-  <div class="admin-body" id="adminBody"></div>
+  <div class="admin-body" id="adminBody">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;
+      padding:1.2rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1.2rem;">
+      <div style="font-size:2.2rem">👥</div>
+      <div>
+        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);
+          font-family:'Space Mono',monospace;margin-bottom:0.3rem">Toplam Ziyaretçi</div>
+        <div id="adminVisitorNum" style="font-size:2.4rem;font-family:'Space Mono',monospace;font-weight:700;
+          background:linear-gradient(135deg,var(--accent),var(--accent2));
+          -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+          line-height:1">—</div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-top:0.25rem">farklı cihaz/tarayıcı</div>
+      </div>
+    </div>
+    <div style="background:rgba(251,146,60,0.08);border:1px solid rgba(251,146,60,0.25);
+      border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:1.5rem;
+      font-size:0.8rem;color:var(--muted);line-height:1.6;">
+      💡 <strong style="color:var(--text)">Nasıl çalışır?</strong>
+      Değişiklikleri yap → <strong style="color:var(--accent)">💾 Kaydet &amp; İndir</strong> butonuna bas →
+      İndirilen <code>index.html</code> dosyasını GitHub'a push et → Tüm kullanıcılar güncellemeyi görür.
+    </div><div class="admin-topic"><div class="admin-topic-title">🚀 Kinematik — Hareket</div><div class="admin-formula-row " id="arow-hareket-0"><div class="admin-formula-name">Ortalama Hız</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-0" rows="2" oninput="adminMarkModified('hareket-0')">v_ort = Δx / Δt = (v₀ + v) / 2</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-0" rows="3" oninput="adminMarkModified('hareket-0')">İkinci eşitlik yalnızca sabit ivmeli harekette geçerlidir.</textarea></div><div class="admin-formula-row " id="arow-hareket-1"><div class="admin-formula-name">İvmeli Hareket — Hız</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-1" rows="2" oninput="adminMarkModified('hareket-1')">v = v₀ + a·t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-1" rows="3" oninput="adminMarkModified('hareket-1')">Sabit ivmeli harekette geçerlidir. a &gt; 0 ise hızlanma, a &lt; 0 ise yavaşlama.</textarea></div><div class="admin-formula-row " id="arow-hareket-2"><div class="admin-formula-name">İvmeli Hareket — Konum</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-2" rows="2" oninput="adminMarkModified('hareket-2')">x = x₀ + v₀·t + ½·a·t²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-2" rows="3" oninput="adminMarkModified('hareket-2')">x₀ = 0 alınırsa x = v₀·t + ½·a·t² olur.</textarea></div><div class="admin-formula-row " id="arow-hareket-3"><div class="admin-formula-name">Hız-Konum Bağıntısı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-3" rows="2" oninput="adminMarkModified('hareket-3')">v² = v₀² + 2·a·Δx</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-3" rows="3" oninput="adminMarkModified('hareket-3')">Zaman bilinmiyorsa bu denklem kullanılır.</textarea></div><div class="admin-formula-row " id="arow-hareket-4"><div class="admin-formula-name">Ortalama İvme</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-4" rows="2" oninput="adminMarkModified('hareket-4')">a = Δv / Δt = (v − v₀) / t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-4" rows="3" oninput="adminMarkModified('hareket-4')">v-t grafiğinin eğimi ivmeyi verir.</textarea></div><div class="admin-formula-row " id="arow-hareket-5"><div class="admin-formula-name">Serbest Düşme</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-5" rows="2" oninput="adminMarkModified('hareket-5')">h = ½·g·t²   |   v = g·t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-5" rows="3" oninput="adminMarkModified('hareket-5')">Hava direnci ihmal edilir. v₀ = 0 durumu. v² = 2·g·h bağıntısı da kullanılır.</textarea></div><div class="admin-formula-row " id="arow-hareket-6"><div class="admin-formula-name">Yatay Atış — Yatay</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-6" rows="2" oninput="adminMarkModified('hareket-6')">x = v₀·t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-6" rows="3" oninput="adminMarkModified('hareket-6')">Yatay yönde ivme sıfırdır; hız sabittir.</textarea></div><div class="admin-formula-row " id="arow-hareket-7"><div class="admin-formula-name">Yatay Atış — Düşey</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-7" rows="2" oninput="adminMarkModified('hareket-7')">y = ½·g·t²   |   vᵧ = g·t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-7" rows="3" oninput="adminMarkModified('hareket-7')">Düşey yönde serbest düşme, yatay yönde sabit hız vardır.</textarea></div><div class="admin-formula-row " id="arow-hareket-8"><div class="admin-formula-name">Eğik Atış — Bileşenler</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-8" rows="2" oninput="adminMarkModified('hareket-8')">vₓ = v₀·cos θ   |   vᵧ = v₀·sin θ − g·t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-8" rows="3" oninput="adminMarkModified('hareket-8')">Maksimum yükseklikte vᵧ = 0 olur.</textarea></div><div class="admin-formula-row " id="arow-hareket-9"><div class="admin-formula-name">Eğik Atış — Menzil</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-9" rows="2" oninput="adminMarkModified('hareket-9')">R = v₀²·sin(2θ) / g</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-9" rows="3" oninput="adminMarkModified('hareket-9')">Maksimum menzil θ = 45° de elde edilir. Tamamlayıcı açılar (30°-60°) eşit menzil verir.</textarea></div><div class="admin-formula-row " id="arow-hareket-10"><div class="admin-formula-name">Eğik Atış — Maks. Yükseklik</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-hareket-10" rows="2" oninput="adminMarkModified('hareket-10')">H = v₀²·sin²θ / (2g)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-hareket-10" rows="3" oninput="adminMarkModified('hareket-10')">θ = 90° de maksimum yükseklik elde edilir.</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">⚖️ Dinamik — Kuvvet &amp; Newton</div><div class="admin-formula-row " id="arow-dinamik-0"><div class="admin-formula-name">Newton 1. Yasa (Eylemsizlik)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-0" rows="2" oninput="adminMarkModified('dinamik-0')">ΣF = 0  ⟹  a = 0</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-0" rows="3" oninput="adminMarkModified('dinamik-0')">Net kuvvet sıfırsa cisim durur ya da sabit hızla hareket eder.</textarea></div><div class="admin-formula-row " id="arow-dinamik-1"><div class="admin-formula-name">Newton 2. Yasa</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-1" rows="2" oninput="adminMarkModified('dinamik-1')">ΣF = m · a</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-1" rows="3" oninput="adminMarkModified('dinamik-1')">Net kuvvet, tüm kuvvetlerin vektör toplamıdır. Yönü ivmenin yönüdür.</textarea></div><div class="admin-formula-row " id="arow-dinamik-2"><div class="admin-formula-name">Ağırlık Kuvveti</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-2" rows="2" oninput="adminMarkModified('dinamik-2')">G = m · g</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-2" rows="3" oninput="adminMarkModified('dinamik-2')">Yüzeyden uzaklaştıkça g azalır. Kütle her yerde aynı kalır.</textarea></div><div class="admin-formula-row " id="arow-dinamik-3"><div class="admin-formula-name">Sürtünme Kuvveti</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-3" rows="2" oninput="adminMarkModified('dinamik-3')">f = μ · N</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-3" rows="3" oninput="adminMarkModified('dinamik-3')">Kinetik μₖ, statik μₛ'den küçüktür (μₖ &lt; μₛ). Yüzey pürüzlülüğüne bağlıdır.</textarea></div><div class="admin-formula-row " id="arow-dinamik-4"><div class="admin-formula-name">Newton 3. Yasa</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-4" rows="2" oninput="adminMarkModified('dinamik-4')">F₁₂ = −F₂₁</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-4" rows="3" oninput="adminMarkModified('dinamik-4')">Etki-tepki kuvvetleri: aynı doğru, zıt yön, eşit büyüklük. Farklı cisimlere uygulanır.</textarea></div><div class="admin-formula-row " id="arow-dinamik-5"><div class="admin-formula-name">Eğik Düzlemde Denge</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-5" rows="2" oninput="adminMarkModified('dinamik-5')">F_parallel = m·g·sinθ   |   N = m·g·cosθ</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-5" rows="3" oninput="adminMarkModified('dinamik-5')">Sürtünmesiz eğik düzlemde: a = g·sinθ</textarea></div><div class="admin-formula-row " id="arow-dinamik-6"><div class="admin-formula-name">Asansör — İvmeli</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dinamik-6" rows="2" oninput="adminMarkModified('dinamik-6')">N = m·(g + a)  ya da  m·(g − a)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dinamik-6" rows="3" oninput="adminMarkModified('dinamik-6')">Yukarı ivmelenince N &gt; G (ağırlaşma), aşağı ivmelenince N &lt; G (hafifleşme). Serbest düşmede N = 0.</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">⚡ İş, Enerji &amp; Güç</div><div class="admin-formula-row " id="arow-is_enerji-0"><div class="admin-formula-name">İş</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-is_enerji-0" rows="2" oninput="adminMarkModified('is_enerji-0')">W = F · d · cos(θ)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-is_enerji-0" rows="3" oninput="adminMarkModified('is_enerji-0')">θ = 90° ise iş = 0; kuvvet yola dik ise iş yapmaz.</textarea></div><div class="admin-formula-row " id="arow-is_enerji-1"><div class="admin-formula-name">Kinetik Enerji</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-is_enerji-1" rows="2" oninput="adminMarkModified('is_enerji-1')">Eₖ = ½ · m · v²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-is_enerji-1" rows="3" oninput="adminMarkModified('is_enerji-1')">İş-enerji teoremi: W_net = ΔEₖ</textarea></div><div class="admin-formula-row " id="arow-is_enerji-2"><div class="admin-formula-name">Potansiyel Enerji</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-is_enerji-2" rows="2" oninput="adminMarkModified('is_enerji-2')">Eₚ = m · g · h</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-is_enerji-2" rows="3" oninput="adminMarkModified('is_enerji-2')">Referans noktası seçimi sonucu değiştirmez.</textarea></div><div class="admin-formula-row " id="arow-is_enerji-3"><div class="admin-formula-name">Mekanik Enerji Korunumu</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-is_enerji-3" rows="2" oninput="adminMarkModified('is_enerji-3')">Eₖ₁ + Eₚ₁ = Eₖ₂ + Eₚ₂</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-is_enerji-3" rows="3" oninput="adminMarkModified('is_enerji-3')">Sürtünme yoksa toplam mekanik enerji sabit kalır.</textarea></div><div class="admin-formula-row " id="arow-is_enerji-4"><div class="admin-formula-name">Güç</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-is_enerji-4" rows="2" oninput="adminMarkModified('is_enerji-4')">P = W / t = F · v</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-is_enerji-4" rows="3" oninput="adminMarkModified('is_enerji-4')">1 HP ≈ 746 W.</textarea></div><div class="admin-formula-row " id="arow-is_enerji-5"><div class="admin-formula-name">Yay Potansiyel Enerjisi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-is_enerji-5" rows="2" oninput="adminMarkModified('is_enerji-5')">Eₛ = ½ · k · x²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-is_enerji-5" rows="3" oninput="adminMarkModified('is_enerji-5')">Hooke yasası: F = k·x ile birlikte kullanılır.</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">💥 Momentum &amp; İmpuls</div><div class="admin-formula-row " id="arow-momentum-0"><div class="admin-formula-name">Momentum</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-momentum-0" rows="2" oninput="adminMarkModified('momentum-0')">p = m · v</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-momentum-0" rows="3" oninput="adminMarkModified('momentum-0')">Vektörel büyüklüktür; yönü hız yönündedir. SI birimi kg·m/s = N·s.</textarea></div><div class="admin-formula-row " id="arow-momentum-1"><div class="admin-formula-name">İmpuls</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-momentum-1" rows="2" oninput="adminMarkModified('momentum-1')">J = F · Δt = Δp = m·v − m·v₀</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-momentum-1" rows="3" oninput="adminMarkModified('momentum-1')">F-t grafiğinin altındaki alan impulsu verir. Kısa sürede büyük kuvvet → büyük impuls.</textarea></div><div class="admin-formula-row " id="arow-momentum-2"><div class="admin-formula-name">Momentum Korunumu</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-momentum-2" rows="2" oninput="adminMarkModified('momentum-2')">Σpᵢ = Σpf  →  m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-momentum-2" rows="3" oninput="adminMarkModified('momentum-2')">Sisteme dışarıdan net kuvvet etki etmiyorsa toplam momentum sabit kalır.</textarea></div><div class="admin-formula-row " id="arow-momentum-3"><div class="admin-formula-name">Tamamen Esnek Çarpışma</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-momentum-3" rows="2" oninput="adminMarkModified('momentum-3')">v₁' = ((m₁−m₂)v₁ + 2m₂v₂) / (m₁+m₂)
+v₂' = ((m₂−m₁)v₂ + 2m₁v₁) / (m₁+m₂)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-momentum-3" rows="3" oninput="adminMarkModified('momentum-3')">Hem kinetik enerji hem momentum korunur. v₂=0 ise: v₁'=(m₁−m₂)v₁/(m₁+m₂), v₂'=2m₁v₁/(m₁+m₂). m₁=m₂ ise hızlar yer değiştirir.</textarea></div><div class="admin-formula-row " id="arow-momentum-4"><div class="admin-formula-name">Tamamen Esnek Olmayan</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-momentum-4" rows="2" oninput="adminMarkModified('momentum-4')">m₁v₁ + m₂v₂ = (m₁+m₂)·v'</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-momentum-4" rows="3" oninput="adminMarkModified('momentum-4')">Cisimler birleşir; maksimum kinetik enerji kaybı olur. ΔEₖ = ½·μ·(v₁−v₂)² [μ = indirgenmiş kütle]</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">🌀 Dairesel Hareket &amp; Gravite</div><div class="admin-formula-row " id="arow-dairesel-0"><div class="admin-formula-name">Çizgisel &amp; Açısal Hız</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-0" rows="2" oninput="adminMarkModified('dairesel-0')">v = ω·r   |   ω = 2π/T = 2πf</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-0" rows="3" oninput="adminMarkModified('dairesel-0')">Aynı katı cisimde ω her noktada eşit, v ise r ile orantılıdır.</textarea></div><div class="admin-formula-row " id="arow-dairesel-1"><div class="admin-formula-name">Merkezcil İvme</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-1" rows="2" oninput="adminMarkModified('dairesel-1')">aₘ = v² / r = ω²·r = 4π²r/T²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-1" rows="3" oninput="adminMarkModified('dairesel-1')">Daima merkeze doğru (santripetal) yönelmiştir. Yönü değişir, büyüklüğü sabittir.</textarea></div><div class="admin-formula-row " id="arow-dairesel-2"><div class="admin-formula-name">Merkezcil Kuvvet</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-2" rows="2" oninput="adminMarkModified('dairesel-2')">Fₘ = m·v²/r = m·ω²·r</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-2" rows="3" oninput="adminMarkModified('dairesel-2')">Bu başlı başına bir kuvvet türü değildir; sürtünme, gerilim, yerçekimi vb. net kuvvetidir.</textarea></div><div class="admin-formula-row " id="arow-dairesel-3"><div class="admin-formula-name">Evrensel Çekim</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-3" rows="2" oninput="adminMarkModified('dairesel-3')">F = G · m₁·m₂ / r²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-3" rows="3" oninput="adminMarkModified('dairesel-3')">Mesafe 2 katına çıkarsa kuvvet ¼ olur (ters kare yasası).</textarea></div><div class="admin-formula-row " id="arow-dairesel-4"><div class="admin-formula-name">Yüzey Yerçekimi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-4" rows="2" oninput="adminMarkModified('dairesel-4')">g = G · M / R²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-4" rows="3" oninput="adminMarkModified('dairesel-4')">Yüzeyden h yükseklikte: gₕ = G·M/(R+h)². h &lt;&lt; R ise gₕ ≈ g·(1 − 2h/R)</textarea></div><div class="admin-formula-row " id="arow-dairesel-5"><div class="admin-formula-name">Uydu Orbital Hızı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-5" rows="2" oninput="adminMarkModified('dairesel-5')">v = √(G·M/r)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-5" rows="3" oninput="adminMarkModified('dairesel-5')">Yörünge yarıçapı arttıkça orbital hız azalır.</textarea></div><div class="admin-formula-row " id="arow-dairesel-6"><div class="admin-formula-name">Kepler 3. Yasası</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dairesel-6" rows="2" oninput="adminMarkModified('dairesel-6')">T² = (4π²/(G·M)) · r³   →   T² ∝ r³</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dairesel-6" rows="3" oninput="adminMarkModified('dairesel-6')">Tüm gezegenler için G·M sabittir. T₁²/r₁³ = T₂²/r₂³</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">💧 Basınç &amp; Akışkanlar</div><div class="admin-formula-row " id="arow-basinc-0"><div class="admin-formula-name">Basınç</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-basinc-0" rows="2" oninput="adminMarkModified('basinc-0')">P = F / A</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-basinc-0" rows="3" oninput="adminMarkModified('basinc-0')">1 atm = 101 325 Pa ≈ 10⁵ Pa</textarea></div><div class="admin-formula-row admin-modified" id="arow-basinc-1"><div class="admin-formula-name">Sıvı Basıncı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-basinc-1" rows="2" oninput="adminMarkModified('basinc-1')" __gchrome_uniqueid="5">P = ρ · g · h</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-basinc-1" rows="3" oninput="adminMarkModified('basinc-1')" __gchrome_uniqueid="4">Mutlak basınç: P_mutlak = P_atm + ρgh. Aynı derinlikteki tüm noktalarda basınç eşittir. Yoğunluk ve g sabitken yalnızca derinliğe bağlıdır.</textarea></div><div class="admin-formula-row " id="arow-basinc-2"><div class="admin-formula-name">Pascal Yasası</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-basinc-2" rows="2" oninput="adminMarkModified('basinc-2')">P₁ = P₂   →   F₁/A₁ = F₂/A₂</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-basinc-2" rows="3" oninput="adminMarkModified('basinc-2')">Kapalı bir sıvıya uygulanan basınç her yöne eşit iletilir. Hidrolik sistemlerin temelidir. A₂ &gt; A₁ ise F₂ &gt; F₁ (kuvvet büyütme).</textarea></div><div class="admin-formula-row " id="arow-basinc-3"><div class="admin-formula-name">Arşimet (Kaldırma) Kuvveti</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-basinc-3" rows="2" oninput="adminMarkModified('basinc-3')">Fₐ = ρ_sıvı · V_batan · g</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-basinc-3" rows="3" oninput="adminMarkModified('basinc-3')">Cisim tamamen batarsa V_batan = V_cisim. Cisim yüzüyorsa Fₐ = G_cisim → ρ_sıvı·V_batan = ρ_cisim·V_cisim.</textarea></div><div class="admin-formula-row " id="arow-basinc-4"><div class="admin-formula-name">Bernoulli</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-basinc-4" rows="2" oninput="adminMarkModified('basinc-4')">P + ½ρv² + ρgh = sabit</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-basinc-4" rows="3" oninput="adminMarkModified('basinc-4')">İdeal akışkanlar için enerji korunumu ilkesidir.</textarea></div><div class="admin-formula-row " id="arow-basinc-5"><div class="admin-formula-name">Süreklilik Denklemi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-basinc-5" rows="2" oninput="adminMarkModified('basinc-5')">A₁·v₁ = A₂·v₂</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-basinc-5" rows="3" oninput="adminMarkModified('basinc-5')">Sıkıştırılamaz akışkanlar için geçerlidir.</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">🌡️ Isı &amp; Sıcaklık</div><div class="admin-formula-row " id="arow-sicaklik-0"><div class="admin-formula-name">Isı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-sicaklik-0" rows="2" oninput="adminMarkModified('sicaklik-0')">Q = m · c · ΔT</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-sicaklik-0" rows="3" oninput="adminMarkModified('sicaklik-0')">Su için c = 4200 J/kg·K</textarea></div><div class="admin-formula-row " id="arow-sicaklik-1"><div class="admin-formula-name">Hal Değişimi Isısı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-sicaklik-1" rows="2" oninput="adminMarkModified('sicaklik-1')">Q = m · L</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-sicaklik-1" rows="3" oninput="adminMarkModified('sicaklik-1')">Erime veya buharlaşmada sıcaklık değişmez.</textarea></div><div class="admin-formula-row " id="arow-sicaklik-2"><div class="admin-formula-name">Isı Dengesi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-sicaklik-2" rows="2" oninput="adminMarkModified('sicaklik-2')">Q_verilen = Q_alınan</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-sicaklik-2" rows="3" oninput="adminMarkModified('sicaklik-2')">Kalorimetri problemlerinin temelidir.</textarea></div><div class="admin-formula-row " id="arow-sicaklik-3"><div class="admin-formula-name">Genleşme</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-sicaklik-3" rows="2" oninput="adminMarkModified('sicaklik-3')">ΔL = α · L₀ · ΔT</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-sicaklik-3" rows="3" oninput="adminMarkModified('sicaklik-3')">Hacim genleşmesi: ΔV = 3α · V₀ · ΔT</textarea></div><div class="admin-formula-row " id="arow-sicaklik-4"><div class="admin-formula-name">İdeal Gaz</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-sicaklik-4" rows="2" oninput="adminMarkModified('sicaklik-4')">P·V = n·R·T</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-sicaklik-4" rows="3" oninput="adminMarkModified('sicaklik-4')">T(K) = T(°C) + 273</textarea></div><div class="admin-formula-row " id="arow-sicaklik-5"><div class="admin-formula-name">Carnot Verimi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-sicaklik-5" rows="2" oninput="adminMarkModified('sicaklik-5')">η = 1 − T_soğuk / T_sıcak   (×100 ile %)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-sicaklik-5" rows="3" oninput="adminMarkModified('sicaklik-5')">T mutlaka Kelvin cinsinden yazılmalıdır! T(K) = T(°C) + 273. Gerçek ısı motorları her zaman Carnot veriminin altında kalır. η = 1 yalnızca T_soğuk = 0 K olunca mümkün olur (ulaşılamaz).</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">〰️ Dalgalar &amp; Ses</div><div class="admin-formula-row " id="arow-dalgalar-0"><div class="admin-formula-name">Dalga Hızı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-0" rows="2" oninput="adminMarkModified('dalgalar-0')">v = λ · f = λ / T</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-0" rows="3" oninput="adminMarkModified('dalgalar-0')">Ortam değişince f sabit kalır, λ değişir. Hız yalnızca ortama bağlıdır.</textarea></div><div class="admin-formula-row " id="arow-dalgalar-1"><div class="admin-formula-name">Gerdirili Telde Dalga Hızı</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-1" rows="2" oninput="adminMarkModified('dalgalar-1')">v = √(F / μ)   |   μ = m/L</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-1" rows="3" oninput="adminMarkModified('dalgalar-1')">Gerilim arttıkça hız artar. Telin kalınlığı arttıkça μ artar, hız azalır.</textarea></div><div class="admin-formula-row " id="arow-dalgalar-2"><div class="admin-formula-name">Telde / Açık Borudaki Duran Dalga</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-2" rows="2" oninput="adminMarkModified('dalgalar-2')">λₙ = 2L/n   |   fₙ = n·v/(2L)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-2" rows="3" oninput="adminMarkModified('dalgalar-2')">Tel ve iki ucu açık boru: tüm harmonikler oluşur. Bir ucu kapalı boru: λₙ = 4L/(2n−1), fₙ = (2n−1)·v/(4L) — yalnızca tek harmonikler. n=1: temel harmonik.</textarea></div><div class="admin-formula-row " id="arow-dalgalar-3"><div class="admin-formula-name">Doppler Etkisi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-3" rows="2" oninput="adminMarkModified('dalgalar-3')">f' = f · (v ± vₐ) / (v ∓ v_k)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-3" rows="3" oninput="adminMarkModified('dalgalar-3')">Alıcı kaynağa yaklaşırsa üstte +, uzaklaşırsa −. Kaynak alıcıya yaklaşırsa altta −, uzaklaşırsa +. Yaklaşma frekansı artırır, uzaklaşma azaltır.</textarea></div><div class="admin-formula-row " id="arow-dalgalar-4"><div class="admin-formula-name">Ses Şiddeti Düzeyi (dB)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-4" rows="2" oninput="adminMarkModified('dalgalar-4')">L = 10 · log(I / I₀)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-4" rows="3" oninput="adminMarkModified('dalgalar-4')">10 dB artış → şiddet 10 kat artar. 20 dB → 100 kat, 30 dB → 1000 kat.</textarea></div><div class="admin-formula-row " id="arow-dalgalar-5"><div class="admin-formula-name">Basit Sarkaç Periyodu</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-5" rows="2" oninput="adminMarkModified('dalgalar-5')">T = 2π · √(L / g)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-5" rows="3" oninput="adminMarkModified('dalgalar-5')">Genlikten ve kütleden bağımsızdır. Yalnızca küçük açılar için (&lt; 15°) geçerlidir.</textarea></div><div class="admin-formula-row " id="arow-dalgalar-6"><div class="admin-formula-name">Yay-Kütle Sarkacı Periyodu</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-dalgalar-6" rows="2" oninput="adminMarkModified('dalgalar-6')">T = 2π · √(m / k)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-dalgalar-6" rows="3" oninput="adminMarkModified('dalgalar-6')">Genlikten bağımsızdır. k arttıkça (sert yay) periyot azalır.</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">⚡ Elektrik &amp; Manyetizma</div><div class="admin-formula-row " id="arow-elektrik-0"><div class="admin-formula-name">Coulomb Yasası</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-0" rows="2" oninput="adminMarkModified('elektrik-0')">F = k · |q₁·q₂| / r²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-0" rows="3" oninput="adminMarkModified('elektrik-0')">k = 1/(4πε₀). Aynı işaretli yükler iter, zıt işaretliler çeker.</textarea></div><div class="admin-formula-row " id="arow-elektrik-1"><div class="admin-formula-name">Elektrik Alan</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-1" rows="2" oninput="adminMarkModified('elektrik-1')">E = F / q₀ = k·Q / r²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-1" rows="3" oninput="adminMarkModified('elektrik-1')">Vektörel büyüklük. Pozitif yükten dışarı, negatif yüke doğru yönelir. Birden fazla yük varsa süperpozisyon ilkesi uygulanır: E_toplam = ΣEᵢ.</textarea></div><div class="admin-formula-row " id="arow-elektrik-2"><div class="admin-formula-name">Düzgün Elektrik Alan</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-2" rows="2" oninput="adminMarkModified('elektrik-2')">E = V / d   |   F = q·E</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-2" rows="3" oninput="adminMarkModified('elektrik-2')">Paralel plakalarda alan düzgündür. Yük hareketi: W = q·V</textarea></div><div class="admin-formula-row " id="arow-elektrik-3"><div class="admin-formula-name">Elektrik Potansiyel</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-3" rows="2" oninput="adminMarkModified('elektrik-3')">V = k · Q / r   |   W = q·ΔV</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-3" rows="3" oninput="adminMarkModified('elektrik-3')">Skaler büyüklük. E = −ΔV/Δr (alan, potansiyelin gradyanının negatifi).</textarea></div><div class="admin-formula-row " id="arow-elektrik-4"><div class="admin-formula-name">Kondansatör Kapasitesi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-4" rows="2" oninput="adminMarkModified('elektrik-4')">C = Q / V = ε₀·A / d</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-4" rows="3" oninput="adminMarkModified('elektrik-4')">Paralel bağlı: C_top = C₁+C₂. Seri bağlı: 1/C_top = 1/C₁+1/C₂. Depolanan enerji: U = ½CV² = Q²/(2C) = QV/2.</textarea></div><div class="admin-formula-row " id="arow-elektrik-5"><div class="admin-formula-name">Ohm Yasası &amp; Direnç</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-5" rows="2" oninput="adminMarkModified('elektrik-5')">V = I·R   |   R = ρ·L/A</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-5" rows="3" oninput="adminMarkModified('elektrik-5')">Seri: R = R₁+R₂. Paralel: 1/R = 1/R₁+1/R₂.</textarea></div><div class="admin-formula-row " id="arow-elektrik-6"><div class="admin-formula-name">Elektrik Gücü &amp; Enerji</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-6" rows="2" oninput="adminMarkModified('elektrik-6')">P = V·I = I²·R = V²/R   |   W = P·t</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-6" rows="3" oninput="adminMarkModified('elektrik-6')">Joule ısınması: Q = I²·R·t. 1 kWh = 3,6×10⁶ J</textarea></div><div class="admin-formula-row " id="arow-elektrik-7"><div class="admin-formula-name">Kirchhoff Akım Yasası (KAY)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-7" rows="2" oninput="adminMarkModified('elektrik-7')">ΣI_giren = ΣI_çıkan</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-7" rows="3" oninput="adminMarkModified('elektrik-7')">Düğüm noktasında toplam giren akım = toplam çıkan akım (yük korunumu).</textarea></div><div class="admin-formula-row " id="arow-elektrik-8"><div class="admin-formula-name">Kirchhoff Gerilim Yasası (KGY)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-8" rows="2" oninput="adminMarkModified('elektrik-8')">ΣV = 0  (kapalı çevrim)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-8" rows="3" oninput="adminMarkModified('elektrik-8')">Kapalı çevrimdeki gerilim düşümlerinin toplamı sıfırdır (enerji korunumu).</textarea></div><div class="admin-formula-row " id="arow-elektrik-9"><div class="admin-formula-name">Manyetik Kuvvet (hareketli yük)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-9" rows="2" oninput="adminMarkModified('elektrik-9')">F = q·v·B·sinθ</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-9" rows="3" oninput="adminMarkModified('elektrik-9')">Lorentz kuvveti. θ = 90° maksimum. Yönü: sağ el kuralı (pozitif yük için).</textarea></div><div class="admin-formula-row " id="arow-elektrik-10"><div class="admin-formula-name">Manyetik Kuvvet (akım taşıyan tel)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-10" rows="2" oninput="adminMarkModified('elektrik-10')">F = B·I·L·sinθ</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-10" rows="3" oninput="adminMarkModified('elektrik-10')">Tel alana paralelse (θ=0°) kuvvet sıfır; dik ise maksimum.</textarea></div><div class="admin-formula-row " id="arow-elektrik-11"><div class="admin-formula-name">Faraday İndüksiyon Yasası</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-11" rows="2" oninput="adminMarkModified('elektrik-11')">ε = −N · ΔΦ/Δt   |   Φ = B·A·cosθ</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-11" rows="3" oninput="adminMarkModified('elektrik-11')">Lenz yasası: negatif işaret, indüklenen akımın değişime karşı olduğunu gösterir.</textarea></div><div class="admin-formula-row " id="arow-elektrik-12"><div class="admin-formula-name">Transformatör</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-elektrik-12" rows="2" oninput="adminMarkModified('elektrik-12')">V₁/V₂ = N₁/N₂   |   I₁/I₂ = N₂/N₁</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-elektrik-12" rows="3" oninput="adminMarkModified('elektrik-12')">İdeal transformatörde güç korunur: P₁ = P₂ → V₁·I₁ = V₂·I₂. Yükseltici: N₂&gt;N₁ → V₂&gt;V₁ ama I₂&lt;I₁. Alçaltıcı: N₂&lt;N₁.</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">🔭 Optik</div><div class="admin-formula-row " id="arow-optik-0"><div class="admin-formula-name">Snell Yasası (Kırılma)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-optik-0" rows="2" oninput="adminMarkModified('optik-0')">n₁ · sin θ₁ = n₂ · sin θ₂</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-optik-0" rows="3" oninput="adminMarkModified('optik-0')">n = c/v (vakumda c = 3×10⁸ m/s). Cam için n ≈ 1,5; su için n ≈ 1,33. Işık yoğun ortamdan seyrek ortama geçerken kırıcı açı büyür. Kritik açıda tam yansıma başlar: sin θ_k = n₂/n₁.</textarea></div><div class="admin-formula-row " id="arow-optik-1"><div class="admin-formula-name">İnce Mercek / Ayna Formülü</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-optik-1" rows="2" oninput="adminMarkModified('optik-1')">1/f = 1/d_o + 1/d_i</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-optik-1" rows="3" oninput="adminMarkModified('optik-1')">İşaret kuralı: gerçek cisim d_o &gt; 0. Gerçek görüntü d_i &gt; 0 (mercekte aynı taraf, aynada karşı taraf). Sanal görüntü d_i &lt; 0. Yakınsak mercek/çukur ayna f &gt; 0; ıraksak mercek/tümsek ayna f &lt; 0.</textarea></div><div class="admin-formula-row " id="arow-optik-2"><div class="admin-formula-name">Büyütme</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-optik-2" rows="2" oninput="adminMarkModified('optik-2')">m = h_i / h_o = −d_i / d_o</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-optik-2" rows="3" oninput="adminMarkModified('optik-2')">|m| &gt; 1: büyütülmüş. |m| &lt; 1: küçültülmüş. m &gt; 0: düz görüntü. m &lt; 0: ters görüntü. Sanal görüntüde d_i &lt; 0 alınır.</textarea></div><div class="admin-formula-row " id="arow-optik-3"><div class="admin-formula-name">Küresel Ayna Odak</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-optik-3" rows="2" oninput="adminMarkModified('optik-3')">f = R / 2</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-optik-3" rows="3" oninput="adminMarkModified('optik-3')">Çukur aynada f &gt; 0, tümsek aynada f &lt; 0.</textarea></div><div class="admin-formula-row " id="arow-optik-4"><div class="admin-formula-name">İnce Mercek Gücü</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-optik-4" rows="2" oninput="adminMarkModified('optik-4')">P = 1/f (dioptri)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-optik-4" rows="3" oninput="adminMarkModified('optik-4')">Birleşik merceklerde: P = P₁ + P₂</textarea></div></div><div class="admin-topic"><div class="admin-topic-title">⚛️ Modern Fizik</div><div class="admin-formula-row " id="arow-modern-0"><div class="admin-formula-name">Foton Enerjisi (Planck)</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-0" rows="2" oninput="adminMarkModified('modern-0')">E = h·f = h·c/λ</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-0" rows="3" oninput="adminMarkModified('modern-0')">1 eV = 1,6×10⁻¹⁹ J. Işığın hem dalga hem parçacık özelliği vardır (dalga-parçacık dualitesi).</textarea></div><div class="admin-formula-row " id="arow-modern-1"><div class="admin-formula-name">Fotoelektrik Etki</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-1" rows="2" oninput="adminMarkModified('modern-1')">E_k = h·f − φ = h·f − h·f₀</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-1" rows="3" oninput="adminMarkModified('modern-1')">f &lt; f₀ ise ışık şiddeti ne olursa olsun elektron sökülmez.</textarea></div><div class="admin-formula-row " id="arow-modern-2"><div class="admin-formula-name">De Broglie Madde Dalgası</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-2" rows="2" oninput="adminMarkModified('modern-2')">λ = h / p = h / (m·v)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-2" rows="3" oninput="adminMarkModified('modern-2')">Her madde parçacığının bir dalga boyu vardır. Büyük kütlelerde ihmal edilebilir düzeydedir.</textarea></div><div class="admin-formula-row " id="arow-modern-3"><div class="admin-formula-name">Bohr Modeli — Enerji</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-3" rows="2" oninput="adminMarkModified('modern-3')">Eₙ = −13,6 / n²  (eV)</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-3" rows="3" oninput="adminMarkModified('modern-3')">Yalnızca hidrojen atomu için geçerlidir. n=1: temel hal (−13,6 eV). Negatif işaret elektronu bağlı tutar. İyonizasyon enerjisi = +13,6 eV (n=∞ e çıkarmak için).</textarea></div><div class="admin-formula-row " id="arow-modern-4"><div class="admin-formula-name">Bohr Modeli — Yarıçap</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-4" rows="2" oninput="adminMarkModified('modern-4')">rₙ = n²·a₀   |   a₀ = 0,053 nm</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-4" rows="3" oninput="adminMarkModified('modern-4')">n arttıkça yörünge yarıçapı n² ile büyür.</textarea></div><div class="admin-formula-row " id="arow-modern-5"><div class="admin-formula-name">Spektral Geçiş Enerjisi</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-5" rows="2" oninput="adminMarkModified('modern-5')">ΔE = Eₙ₂ − Eₙ₁ = h·f = h·c/λ</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-5" rows="3" oninput="adminMarkModified('modern-5')">Elektron üst seviyeden alta inerken foton yayar, alttan üste çıkarken soğurur.</textarea></div><div class="admin-formula-row " id="arow-modern-6"><div class="admin-formula-name">Radyoaktif Bozunma</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-6" rows="2" oninput="adminMarkModified('modern-6')">N(t) = N₀ · (½)^(t/T½)   |   A = λ·N</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-6" rows="3" oninput="adminMarkModified('modern-6')">Her T½ sürede çekirdek sayısı ve aktivite yarıya düşer. λ = ln2/T½ ≈ 0,693/T½. A₀ = λ·N₀.</textarea></div><div class="admin-formula-row " id="arow-modern-7"><div class="admin-formula-name">Kütle-Enerji Denkliği</div><div class="admin-field-label">Formül</div><textarea class="admin-input" id="aeq-modern-7" rows="2" oninput="adminMarkModified('modern-7')">E = Δm · c²</textarea><div class="admin-field-label">Açıklama / Not</div><textarea class="admin-input" id="anote-modern-7" rows="3" oninput="adminMarkModified('modern-7')">1 u = 1,66×10⁻²⁷ kg = 931,5 MeV/c². Çekirdekteki nükleonlar serbest hâlden daha az kütlelidir; fark bağlanma enerjisine dönüşmüştür.</textarea></div></div></div>
   <div class="admin-save-bar">
-    <span class="admin-save-status" id="adminSaveStatus">Değişiklikler tüm kullanıcılara yansır</span>
+    <span class="admin-save-status " id="adminSaveStatus">Değişiklik yap → Kaydet &amp; İndir → GitHub'a push et</span>
     <button class="admin-reset-btn" onclick="adminResetAll()">🗑 Tümünü Sıfırla</button>
-    <button class="admin-save-btn" onclick="adminSaveAll()">💾 Kaydet & İndir</button>
+    <button class="admin-save-btn" onclick="adminSaveAll()" disabled="">⏳ Hazırlanıyor...</button>
   </div>
 </div>
 <!-- /ADMİN PANELİ -->
 
 <!-- İSİM GİRİŞ EKRANI -->
-<div id="nameScreen">
+<div id="nameScreen" class="visible" style="display: none;">
   <div class="name-box">
     <div class="name-logo">φ<span>YKS</span>.fizik</div>
     <div class="name-tagline">Formüller, notlar ve quiz bir arada</div>
     <div class="name-title">Merhaba! 👋</div>
     <p class="name-sub">Seni nasıl çağıralım?<br>İsminle kişiselleştirilmiş bir deneyim seni bekliyor.</p>
-    <input class="name-input" id="nameInput" type="text" maxlength="20"
-      placeholder="İsminizi girin..." autocomplete="off"
-      onkeydown="if(event.key==='Enter') submitName()" />
+    <input class="name-input" id="nameInput" type="text" maxlength="20" placeholder="İsminizi girin..." autocomplete="off" onkeydown="if(event.key==='Enter') submitName()" __gchrome_uniqueid="1">
     <button class="name-btn-primary" onclick="submitName()">✦ Devam Et</button>
     <button class="name-btn-guest" onclick="submitGuest()">👤 Misafir olarak devam et</button>
   </div>
@@ -1510,9 +1520,7 @@
 <div id="mobileSearchOverlay" onclick="mobileSearchOutsideClick(event)">
   <div class="mobile-search-bar">
     <span style="color:var(--muted);font-size:0.9rem;flex-shrink:0">🔍</span>
-    <input type="text" id="mobileSearchInput" placeholder="Formül veya konu ara..."
-      oninput="mobileSearchInput_handler()"
-      onkeydown="if(event.key==='Enter'){mobileGoSearch();}" autocomplete="off">
+    <input type="text" id="mobileSearchInput" placeholder="Formül veya konu ara..." oninput="mobileSearchInput_handler()" onkeydown="if(event.key==='Enter'){mobileGoSearch();}" autocomplete="off" __gchrome_uniqueid="2">
     <button class="mobile-search-close" id="mobileSearchClearBtn" onclick="mobileSearchClear()" style="display:none">✕</button>
     <button class="mobile-search-close" onclick="closeMobileSearch()">✖</button>
   </div>
@@ -1525,7 +1533,7 @@
   <div class="header-center">
     <div class="search-bar" id="searchBarWrap">
       <span class="search-icon">🔍</span>
-      <input type="text" id="searchInput" placeholder="Formül veya konu ara...">
+      <input type="text" id="searchInput" placeholder="Formül veya konu ara..." __gchrome_uniqueid="3">
       <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearch()" title="Temizle" style="display:none">✕</button>
       <button class="search-go-btn" id="searchGoBtn" onclick="goToSearch()" title="Ara">↵</button>
     </div>
@@ -1541,15 +1549,689 @@
   <h1>YKS Fizik<br><em>Tüm Formüller</em></h1>
   <p>Bu sitenin tasarımı,kodlaması Batuhan Sarısakal tarafından Geliştirilmiştir.(Sitemiz beta aşamasındadır,lütfen formüllere dikkat edelim.)</p>
   <div class="stats-row">
-    <div class="stat"><span class="stat-num" id="totalCount">0</span><span class="stat-label">Formül</span></div>
-    <div class="stat"><span class="stat-num" id="topicCount">0</span><span class="stat-label">Konu</span></div>
+    <div class="stat"><span class="stat-num" id="totalCount">81</span><span class="stat-label">Formül</span></div>
+    <div class="stat"><span class="stat-num" id="topicCount">11</span><span class="stat-label">Konu</span></div>
     <div class="stat"><span class="stat-num" id="bookmarkCount">0</span><span class="stat-label">Kaydedilen</span></div>
   </div>
 </div>
 
 <div class="main-layout">
-  <nav class="sidebar" id="sidebar"></nav>
-  <main class="content" id="mainContent"></main>
+  <nav class="sidebar" id="sidebar"><div class="sidebar-section">
+    <div class="sidebar-title">Genel</div>
+    <div class="nav-item active" onclick="scrollToAll(this)" id="navAll">
+      <span class="nav-icon">📚</span> Tüm Konular
+      <span class="nav-badge">81</span>
+    </div>
+    <div class="nav-item" onclick="scrollToBookmarks(this)">
+      <span class="nav-icon">⭐</span> Kaydedilenler
+      <span class="nav-badge" id="navBmCount">0</span>
+    </div>
+  </div><div class="sidebar-sep"></div><div class="sidebar-section"><div class="sidebar-title">TYT Konuları</div><div class="nav-item nav-tyt" onclick="scrollToTopic('hareket',this)">
+      <span class="nav-icon">🚀</span> Kinematik
+      <span class="nav-badge">11</span>
+    </div><div class="nav-item nav-tyt" onclick="scrollToTopic('dinamik',this)">
+      <span class="nav-icon">⚖️</span> Dinamik
+      <span class="nav-badge">7</span>
+    </div><div class="nav-item nav-tyt" onclick="scrollToTopic('is_enerji',this)">
+      <span class="nav-icon">⚡</span> İş, Enerji &amp; Güç
+      <span class="nav-badge">6</span>
+    </div><div class="nav-item nav-tyt" onclick="scrollToTopic('momentum',this)">
+      <span class="nav-icon">💥</span> Momentum &amp; İmpuls
+      <span class="nav-badge">5</span>
+    </div><div class="nav-item nav-tyt" onclick="scrollToTopic('basinc',this)">
+      <span class="nav-icon">💧</span> Basınç &amp; Akışkanlar
+      <span class="nav-badge">6</span>
+    </div><div class="nav-item nav-tyt" onclick="scrollToTopic('sicaklik',this)">
+      <span class="nav-icon">🌡️</span> Isı &amp; Sıcaklık
+      <span class="nav-badge">6</span>
+    </div><div class="nav-item nav-tyt" onclick="scrollToTopic('dalgalar',this)">
+      <span class="nav-icon">〰️</span> Dalgalar &amp; Ses
+      <span class="nav-badge">7</span>
+    </div></div><div class="sidebar-sep"></div><div class="sidebar-section"><div class="sidebar-title">Sadece AYT</div><div class="nav-item nav-ayt" onclick="scrollToTopic('dairesel',this)">
+      <span class="nav-icon">🌀</span> Dairesel Hareket &amp; Gravite
+      <span class="nav-badge">7</span>
+    </div><div class="nav-item nav-ayt" onclick="scrollToTopic('elektrik',this)">
+      <span class="nav-icon">⚡</span> Elektrik &amp; Manyetizma
+      <span class="nav-badge">13</span>
+    </div><div class="nav-item nav-ayt" onclick="scrollToTopic('optik',this)">
+      <span class="nav-icon">🔭</span> Optik
+      <span class="nav-badge">5</span>
+    </div><div class="nav-item nav-ayt" onclick="scrollToTopic('modern',this)">
+      <span class="nav-icon">⚛️</span> Modern Fizik
+      <span class="nav-badge">8</span>
+    </div></div></nav>
+  <main class="content" id="mainContent">
+  <div class="progress-section">
+    <div class="progress-title">Kaydedilen formüller — 0 / 81</div>
+    <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:0%"></div></div>
+  </div>
+  <div class="quiz-banner">
+    <span class="quiz-icon">🎯</span>
+    <div class="quiz-text">
+      <h3>Formülleri Test Et</h3>
+      <p>Karışık quiz ile kendini sına — hangisini biliyorsun?</p>
+    </div>
+    <button class="quiz-btn" onclick="startQuiz()">Quiz Başlat</button>
+  </div><div class="topic-section" id="section-hareket">
+      <div class="topic-header">
+        <span class="topic-icon">🚀</span>
+        <div class="topic-title-group">
+          <h2>Kinematik — Hareket</h2>
+          <p>Düzgün ve ivmeli hareket denklemleri</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-hareket-0" onclick="openFmModal('hareket',0,event)">
+        <div class="formula-name">
+          Ortalama Hız
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v_ort = Δx / Δt = (v₀ + v) / 2</div><div class="formula-vars"><span class="var-tag">v_ort<span> = ortalama hız (m/s)</span></span><span class="var-tag">Δx<span> = konum değişimi (m)</span></span><span class="var-tag">Δt<span> = zaman (s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">İkinci eşitlik yalnızca sabit ivmeli harekette geçerlidir.</div></div><div class="formula-card" id="card-hareket-1" onclick="openFmModal('hareket',1,event)">
+        <div class="formula-name">
+          İvmeli Hareket — Hız
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v = v₀ + a·t</div><div class="formula-vars"><span class="var-tag">v₀<span> = başlangıç hızı (m/s)</span></span><span class="var-tag">a<span> = ivme (m/s²)</span></span><span class="var-tag">t<span> = zaman (s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Sabit ivmeli harekette geçerlidir. a &gt; 0 ise hızlanma, a &lt; 0 ise yavaşlama.</div></div><div class="formula-card" id="card-hareket-2" onclick="openFmModal('hareket',2,event)">
+        <div class="formula-name">
+          İvmeli Hareket — Konum
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">x = x₀ + v₀·t + ½·a·t²</div><div class="formula-vars"><span class="var-tag">x<span> = son konum (m)</span></span><span class="var-tag">x₀<span> = başlangıç konumu</span></span><span class="var-tag">v₀<span> = başlangıç hızı</span></span><span class="var-tag">a<span> = ivme</span></span><span class="var-tag">t<span> = zaman</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">x₀ = 0 alınırsa x = v₀·t + ½·a·t² olur.</div></div><div class="formula-card" id="card-hareket-3" onclick="openFmModal('hareket',3,event)">
+        <div class="formula-name">
+          Hız-Konum Bağıntısı
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v² = v₀² + 2·a·Δx</div><div class="formula-vars"><span class="var-tag">v<span> = son hız</span></span><span class="var-tag">v₀<span> = ilk hız</span></span><span class="var-tag">a<span> = ivme</span></span><span class="var-tag">Δx<span> = yer değiştirme (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Zaman bilinmiyorsa bu denklem kullanılır.</div></div><div class="formula-card" id="card-hareket-4" onclick="openFmModal('hareket',4,event)">
+        <div class="formula-name">
+          Ortalama İvme
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">a = Δv / Δt = (v − v₀) / t</div><div class="formula-vars"><span class="var-tag">a<span> = ivme (m/s²)</span></span><span class="var-tag">Δv<span> = hız değişimi</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">v-t grafiğinin eğimi ivmeyi verir.</div></div><div class="formula-card" id="card-hareket-5" onclick="openFmModal('hareket',5,event)">
+        <div class="formula-name">
+          Serbest Düşme
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">h = ½·g·t²   |   v = g·t</div><div class="formula-vars"><span class="var-tag">h<span> = yükseklik (m)</span></span><span class="var-tag">g<span> = 10 m/s² (YKS standart değeri)</span></span><span class="var-tag">t<span> = süre (s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Hava direnci ihmal edilir. v₀ = 0 durumu. v² = 2·g·h bağıntısı da kullanılır.</div></div><div class="formula-card" id="card-hareket-6" onclick="openFmModal('hareket',6,event)">
+        <div class="formula-name">
+          Yatay Atış — Yatay
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-6')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">x = v₀·t</div><div class="formula-vars"><span class="var-tag">x<span> = yatay mesafe (m)</span></span><span class="var-tag">v₀<span> = ilk yatay hız (m/s)</span></span><span class="var-tag">t<span> = zaman (s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-6')">ℹ️ Açıklama</button>
+        <div class="formula-note">Yatay yönde ivme sıfırdır; hız sabittir.</div></div><div class="formula-card" id="card-hareket-7" onclick="openFmModal('hareket',7,event)">
+        <div class="formula-name">
+          Yatay Atış — Düşey
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-7')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">y = ½·g·t²   |   vᵧ = g·t</div><div class="formula-vars"><span class="var-tag">y<span> = düşey mesafe (m)</span></span><span class="var-tag">vᵧ<span> = düşey hız bileşeni</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-7')">ℹ️ Açıklama</button>
+        <div class="formula-note">Düşey yönde serbest düşme, yatay yönde sabit hız vardır.</div></div><div class="formula-card" id="card-hareket-8" onclick="openFmModal('hareket',8,event)">
+        <div class="formula-name">
+          Eğik Atış — Bileşenler
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-8')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">vₓ = v₀·cos θ   |   vᵧ = v₀·sin θ − g·t</div><div class="formula-vars"><span class="var-tag">vₓ<span> = yatay hız bileşeni</span></span><span class="var-tag">vᵧ<span> = düşey hız bileşeni</span></span><span class="var-tag">θ<span> = atış açısı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-8')">ℹ️ Açıklama</button>
+        <div class="formula-note">Maksimum yükseklikte vᵧ = 0 olur.</div></div><div class="formula-card" id="card-hareket-9" onclick="openFmModal('hareket',9,event)">
+        <div class="formula-name">
+          Eğik Atış — Menzil
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-9')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">R = v₀²·sin(2θ) / g</div><div class="formula-vars"><span class="var-tag">R<span> = menzil (m)</span></span><span class="var-tag">v₀<span> = ilk hız (m/s)</span></span><span class="var-tag">θ<span> = atış açısı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-9')">ℹ️ Açıklama</button>
+        <div class="formula-note">Maksimum menzil θ = 45° de elde edilir. Tamamlayıcı açılar (30°-60°) eşit menzil verir.</div></div><div class="formula-card" id="card-hareket-10" onclick="openFmModal('hareket',10,event)">
+        <div class="formula-name">
+          Eğik Atış — Maks. Yükseklik
+          <button class="bm-btn" onclick="toggleBM(event,'hareket-10')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">H = v₀²·sin²θ / (2g)</div><div class="formula-vars"><span class="var-tag">H<span> = maksimum yükseklik</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-hareket-10')">ℹ️ Açıklama</button>
+        <div class="formula-note">θ = 90° de maksimum yükseklik elde edilir.</div></div></div></div><div class="topic-section" id="section-dinamik">
+      <div class="topic-header">
+        <span class="topic-icon">⚖️</span>
+        <div class="topic-title-group">
+          <h2>Dinamik — Kuvvet &amp; Newton</h2>
+          <p>Newtonun hareket yasaları</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-dinamik-0" onclick="openFmModal('dinamik',0,event)">
+        <div class="formula-name">
+          Newton 1. Yasa (Eylemsizlik)
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ΣF = 0  ⟹  a = 0</div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">Net kuvvet sıfırsa cisim durur ya da sabit hızla hareket eder.</div></div><div class="formula-card" id="card-dinamik-1" onclick="openFmModal('dinamik',1,event)">
+        <div class="formula-name">
+          Newton 2. Yasa
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ΣF = m · a</div><div class="formula-vars"><span class="var-tag">ΣF<span> = net (bileşke) kuvvet (N)</span></span><span class="var-tag">m<span> = kütle (kg)</span></span><span class="var-tag">a<span> = ivme (m/s²)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Net kuvvet, tüm kuvvetlerin vektör toplamıdır. Yönü ivmenin yönüdür.</div></div><div class="formula-card" id="card-dinamik-2" onclick="openFmModal('dinamik',2,event)">
+        <div class="formula-name">
+          Ağırlık Kuvveti
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">G = m · g</div><div class="formula-vars"><span class="var-tag">G<span> = ağırlık (N)</span></span><span class="var-tag">m<span> = kütle (kg)</span></span><span class="var-tag">g<span> = 10 m/s² (YKS standart değeri)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Yüzeyden uzaklaştıkça g azalır. Kütle her yerde aynı kalır.</div></div><div class="formula-card" id="card-dinamik-3" onclick="openFmModal('dinamik',3,event)">
+        <div class="formula-name">
+          Sürtünme Kuvveti
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">f = μ · N</div><div class="formula-vars"><span class="var-tag">f<span> = sürtünme kuvveti (N)</span></span><span class="var-tag">μ<span> = sürtünme katsayısı</span></span><span class="var-tag">N<span> = normal kuvvet (N)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Kinetik μₖ, statik μₛ'den küçüktür (μₖ &lt; μₛ). Yüzey pürüzlülüğüne bağlıdır.</div></div><div class="formula-card" id="card-dinamik-4" onclick="openFmModal('dinamik',4,event)">
+        <div class="formula-name">
+          Newton 3. Yasa
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">F₁₂ = −F₂₁</div><div class="formula-vars"><span class="var-tag">F₁₂<span> = 1'in 2'ye uyguladığı kuvvet</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">Etki-tepki kuvvetleri: aynı doğru, zıt yön, eşit büyüklük. Farklı cisimlere uygulanır.</div></div><div class="formula-card" id="card-dinamik-5" onclick="openFmModal('dinamik',5,event)">
+        <div class="formula-name">
+          Eğik Düzlemde Denge
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">F_parallel = m·g·sinθ   |   N = m·g·cosθ</div><div class="formula-vars"><span class="var-tag">θ<span> = eğim açısı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Sürtünmesiz eğik düzlemde: a = g·sinθ</div></div><div class="formula-card" id="card-dinamik-6" onclick="openFmModal('dinamik',6,event)">
+        <div class="formula-name">
+          Asansör — İvmeli
+          <button class="bm-btn" onclick="toggleBM(event,'dinamik-6')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">N = m·(g + a)  ya da  m·(g − a)</div><div class="formula-vars"><span class="var-tag">N<span> = görünür ağırlık (N)</span></span><span class="var-tag">a<span> = ivme (m/s²)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dinamik-6')">ℹ️ Açıklama</button>
+        <div class="formula-note">Yukarı ivmelenince N &gt; G (ağırlaşma), aşağı ivmelenince N &lt; G (hafifleşme). Serbest düşmede N = 0.</div></div></div></div><div class="topic-section" id="section-is_enerji">
+      <div class="topic-header">
+        <span class="topic-icon">⚡</span>
+        <div class="topic-title-group">
+          <h2>İş, Enerji &amp; Güç</h2>
+          <p>Enerji dönüşümleri ve korunumu</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-is_enerji-0" onclick="openFmModal('is_enerji',0,event)">
+        <div class="formula-name">
+          İş
+          <button class="bm-btn" onclick="toggleBM(event,'is_enerji-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">W = F · d · cos(θ)</div><div class="formula-vars"><span class="var-tag">W<span> = iş (J)</span></span><span class="var-tag">F<span> = kuvvet (N)</span></span><span class="var-tag">d<span> = yol (m)</span></span><span class="var-tag">θ<span> = kuvvet-yol açısı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-is_enerji-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">θ = 90° ise iş = 0; kuvvet yola dik ise iş yapmaz.</div></div><div class="formula-card" id="card-is_enerji-1" onclick="openFmModal('is_enerji',1,event)">
+        <div class="formula-name">
+          Kinetik Enerji
+          <button class="bm-btn" onclick="toggleBM(event,'is_enerji-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Eₖ = ½ · m · v²</div><div class="formula-vars"><span class="var-tag">Eₖ<span> = kinetik enerji (J)</span></span><span class="var-tag">m<span> = kütle</span></span><span class="var-tag">v<span> = hız</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-is_enerji-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">İş-enerji teoremi: W_net = ΔEₖ</div></div><div class="formula-card" id="card-is_enerji-2" onclick="openFmModal('is_enerji',2,event)">
+        <div class="formula-name">
+          Potansiyel Enerji
+          <button class="bm-btn" onclick="toggleBM(event,'is_enerji-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Eₚ = m · g · h</div><div class="formula-vars"><span class="var-tag">Eₚ<span> = potansiyel enerji</span></span><span class="var-tag">h<span> = yükseklik (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-is_enerji-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Referans noktası seçimi sonucu değiştirmez.</div></div><div class="formula-card" id="card-is_enerji-3" onclick="openFmModal('is_enerji',3,event)">
+        <div class="formula-name">
+          Mekanik Enerji Korunumu
+          <button class="bm-btn" onclick="toggleBM(event,'is_enerji-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Eₖ₁ + Eₚ₁ = Eₖ₂ + Eₚ₂</div><button class="expand-btn" onclick="toggleExpand(this,'card-is_enerji-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Sürtünme yoksa toplam mekanik enerji sabit kalır.</div></div><div class="formula-card" id="card-is_enerji-4" onclick="openFmModal('is_enerji',4,event)">
+        <div class="formula-name">
+          Güç
+          <button class="bm-btn" onclick="toggleBM(event,'is_enerji-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P = W / t = F · v</div><div class="formula-vars"><span class="var-tag">P<span> = güç (W)</span></span><span class="var-tag">W<span> = iş (J)</span></span><span class="var-tag">t<span> = süre (s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-is_enerji-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">1 HP ≈ 746 W.</div></div><div class="formula-card" id="card-is_enerji-5" onclick="openFmModal('is_enerji',5,event)">
+        <div class="formula-name">
+          Yay Potansiyel Enerjisi
+          <button class="bm-btn" onclick="toggleBM(event,'is_enerji-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Eₛ = ½ · k · x²</div><div class="formula-vars"><span class="var-tag">k<span> = yay sabiti (N/m)</span></span><span class="var-tag">x<span> = uzama/sıkışma (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-is_enerji-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Hooke yasası: F = k·x ile birlikte kullanılır.</div></div></div></div><div class="topic-section" id="section-momentum">
+      <div class="topic-header">
+        <span class="topic-icon">💥</span>
+        <div class="topic-title-group">
+          <h2>Momentum &amp; İmpuls</h2>
+          <p>Çarpışma ve korunum yasaları</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-momentum-0" onclick="openFmModal('momentum',0,event)">
+        <div class="formula-name">
+          Momentum
+          <button class="bm-btn" onclick="toggleBM(event,'momentum-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">p = m · v</div><div class="formula-vars"><span class="var-tag">p<span> = momentum (kg·m/s)</span></span><span class="var-tag">m<span> = kütle (kg)</span></span><span class="var-tag">v<span> = hız (m/s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-momentum-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">Vektörel büyüklüktür; yönü hız yönündedir. SI birimi kg·m/s = N·s.</div></div><div class="formula-card" id="card-momentum-1" onclick="openFmModal('momentum',1,event)">
+        <div class="formula-name">
+          İmpuls
+          <button class="bm-btn" onclick="toggleBM(event,'momentum-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">J = F · Δt = Δp = m·v − m·v₀</div><div class="formula-vars"><span class="var-tag">J<span> = impuls (N·s)</span></span><span class="var-tag">Δt<span> = etki süresi (s)</span></span><span class="var-tag">Δp<span> = momentum değişimi</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-momentum-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">F-t grafiğinin altındaki alan impulsu verir. Kısa sürede büyük kuvvet → büyük impuls.</div></div><div class="formula-card" id="card-momentum-2" onclick="openFmModal('momentum',2,event)">
+        <div class="formula-name">
+          Momentum Korunumu
+          <button class="bm-btn" onclick="toggleBM(event,'momentum-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Σpᵢ = Σpf  →  m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'</div><button class="expand-btn" onclick="toggleExpand(this,'card-momentum-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Sisteme dışarıdan net kuvvet etki etmiyorsa toplam momentum sabit kalır.</div></div><div class="formula-card" id="card-momentum-3" onclick="openFmModal('momentum',3,event)">
+        <div class="formula-name">
+          Tamamen Esnek Çarpışma
+          <button class="bm-btn" onclick="toggleBM(event,'momentum-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v₁' = ((m₁−m₂)v₁ + 2m₂v₂) / (m₁+m₂)
+v₂' = ((m₂−m₁)v₂ + 2m₁v₁) / (m₁+m₂)</div><div class="formula-vars"><span class="var-tag">v₁,v₂<span> = çarpışma öncesi hızlar</span></span><span class="var-tag">v₁',v₂'<span> = çarpışma sonrası hızlar</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-momentum-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Hem kinetik enerji hem momentum korunur. v₂=0 ise: v₁'=(m₁−m₂)v₁/(m₁+m₂), v₂'=2m₁v₁/(m₁+m₂). m₁=m₂ ise hızlar yer değiştirir.</div></div><div class="formula-card" id="card-momentum-4" onclick="openFmModal('momentum',4,event)">
+        <div class="formula-name">
+          Tamamen Esnek Olmayan
+          <button class="bm-btn" onclick="toggleBM(event,'momentum-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">m₁v₁ + m₂v₂ = (m₁+m₂)·v'</div><div class="formula-vars"><span class="var-tag">v'<span> = ortak hız (m/s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-momentum-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">Cisimler birleşir; maksimum kinetik enerji kaybı olur. ΔEₖ = ½·μ·(v₁−v₂)² [μ = indirgenmiş kütle]</div></div></div></div><div class="topic-section" id="section-dairesel">
+      <div class="topic-header">
+        <span class="topic-icon">🌀</span>
+        <div class="topic-title-group">
+          <h2>Dairesel Hareket &amp; Gravite</h2>
+          <p>Çembersel hareket ve evrensel çekim</p>
+        </div>
+        <div class="topic-level">
+          
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-dairesel-0" onclick="openFmModal('dairesel',0,event)">
+        <div class="formula-name">
+          Çizgisel &amp; Açısal Hız
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v = ω·r   |   ω = 2π/T = 2πf</div><div class="formula-vars"><span class="var-tag">ω<span> = açısal hız (rad/s)</span></span><span class="var-tag">v<span> = çizgisel hız (m/s)</span></span><span class="var-tag">r<span> = yarıçap (m)</span></span><span class="var-tag">T<span> = periyot (s)</span></span><span class="var-tag">f<span> = frekans (Hz)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">Aynı katı cisimde ω her noktada eşit, v ise r ile orantılıdır.</div></div><div class="formula-card" id="card-dairesel-1" onclick="openFmModal('dairesel',1,event)">
+        <div class="formula-name">
+          Merkezcil İvme
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">aₘ = v² / r = ω²·r = 4π²r/T²</div><div class="formula-vars"><span class="var-tag">aₘ<span> = merkezcil ivme (m/s²)</span></span><span class="var-tag">r<span> = yarıçap (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Daima merkeze doğru (santripetal) yönelmiştir. Yönü değişir, büyüklüğü sabittir.</div></div><div class="formula-card" id="card-dairesel-2" onclick="openFmModal('dairesel',2,event)">
+        <div class="formula-name">
+          Merkezcil Kuvvet
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Fₘ = m·v²/r = m·ω²·r</div><div class="formula-vars"><span class="var-tag">Fₘ<span> = merkezcil kuvvet (N)</span></span><span class="var-tag">m<span> = kütle</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Bu başlı başına bir kuvvet türü değildir; sürtünme, gerilim, yerçekimi vb. net kuvvetidir.</div></div><div class="formula-card" id="card-dairesel-3" onclick="openFmModal('dairesel',3,event)">
+        <div class="formula-name">
+          Evrensel Çekim
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">F = G · m₁·m₂ / r²</div><div class="formula-vars"><span class="var-tag">G<span> = 6,674×10⁻¹¹ N·m²/kg²</span></span><span class="var-tag">r<span> = merkezler arası uzaklık (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Mesafe 2 katına çıkarsa kuvvet ¼ olur (ters kare yasası).</div></div><div class="formula-card" id="card-dairesel-4" onclick="openFmModal('dairesel',4,event)">
+        <div class="formula-name">
+          Yüzey Yerçekimi
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">g = G · M / R²</div><div class="formula-vars"><span class="var-tag">M<span> = gezegen kütlesi (kg)</span></span><span class="var-tag">R<span> = gezegen yarıçapı (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">Yüzeyden h yükseklikte: gₕ = G·M/(R+h)². h &lt;&lt; R ise gₕ ≈ g·(1 − 2h/R)</div></div><div class="formula-card" id="card-dairesel-5" onclick="openFmModal('dairesel',5,event)">
+        <div class="formula-name">
+          Uydu Orbital Hızı
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v = √(G·M/r)</div><div class="formula-vars"><span class="var-tag">r<span> = yörünge yarıçapı</span></span><span class="var-tag">M<span> = merkez kütle</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Yörünge yarıçapı arttıkça orbital hız azalır.</div></div><div class="formula-card" id="card-dairesel-6" onclick="openFmModal('dairesel',6,event)">
+        <div class="formula-name">
+          Kepler 3. Yasası
+          <button class="bm-btn" onclick="toggleBM(event,'dairesel-6')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">T² = (4π²/(G·M)) · r³   →   T² ∝ r³</div><div class="formula-vars"><span class="var-tag">T<span> = yörünge periyodu (s)</span></span><span class="var-tag">r<span> = yörünge yarıçapı (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dairesel-6')">ℹ️ Açıklama</button>
+        <div class="formula-note">Tüm gezegenler için G·M sabittir. T₁²/r₁³ = T₂²/r₂³</div></div></div></div><div class="topic-section" id="section-basinc">
+      <div class="topic-header">
+        <span class="topic-icon">💧</span>
+        <div class="topic-title-group">
+          <h2>Basınç &amp; Akışkanlar</h2>
+          <p>Statik ve dinamik akışkan mekaniği</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-basinc-0" onclick="openFmModal('basinc',0,event)">
+        <div class="formula-name">
+          Basınç
+          <button class="bm-btn" onclick="toggleBM(event,'basinc-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P = F / A</div><div class="formula-vars"><span class="var-tag">P<span> = basınç (Pa)</span></span><span class="var-tag">F<span> = kuvvet (N)</span></span><span class="var-tag">A<span> = alan (m²)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-basinc-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">1 atm = 101 325 Pa ≈ 10⁵ Pa</div></div><div class="formula-card" id="card-basinc-1" onclick="openFmModal('basinc',1,event)">
+        <div class="formula-name">
+          Sıvı Basıncı
+          <button class="bm-btn" onclick="toggleBM(event,'basinc-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P = ρ · g · h</div><div class="formula-vars"><span class="var-tag">ρ<span> = sıvının yoğunluğu (kg/m³)</span></span><span class="var-tag">g<span> = 10 m/s² (YKS standart değeri)</span></span><span class="var-tag">h<span> = sıvı yüzeyinden derinlik (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-basinc-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Mutlak basınç: P_mutlak = P_atm + ρgh. Aynı derinlikteki tüm noktalarda basınç eşittir. Yoğunluk ve g sabitken yalnızca derinliğe bağlıdır.</div></div><div class="formula-card" id="card-basinc-2" onclick="openFmModal('basinc',2,event)">
+        <div class="formula-name">
+          Pascal Yasası
+          <button class="bm-btn" onclick="toggleBM(event,'basinc-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P₁ = P₂   →   F₁/A₁ = F₂/A₂</div><div class="formula-vars"><span class="var-tag">F<span> = kuvvet (N)</span></span><span class="var-tag">A<span> = piston alanı (m²)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-basinc-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Kapalı bir sıvıya uygulanan basınç her yöne eşit iletilir. Hidrolik sistemlerin temelidir. A₂ &gt; A₁ ise F₂ &gt; F₁ (kuvvet büyütme).</div></div><div class="formula-card" id="card-basinc-3" onclick="openFmModal('basinc',3,event)">
+        <div class="formula-name">
+          Arşimet (Kaldırma) Kuvveti
+          <button class="bm-btn" onclick="toggleBM(event,'basinc-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Fₐ = ρ_sıvı · V_batan · g</div><div class="formula-vars"><span class="var-tag">ρ_sıvı<span> = sıvının yoğunluğu (kg/m³)</span></span><span class="var-tag">V_batan<span> = sıvıya giren cisim hacmi (m³)</span></span><span class="var-tag">g<span> = 10 m/s² (YKS standart değeri)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-basinc-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Cisim tamamen batarsa V_batan = V_cisim. Cisim yüzüyorsa Fₐ = G_cisim → ρ_sıvı·V_batan = ρ_cisim·V_cisim.</div></div><div class="formula-card" id="card-basinc-4" onclick="openFmModal('basinc',4,event)">
+        <div class="formula-name">
+          Bernoulli
+          <button class="bm-btn" onclick="toggleBM(event,'basinc-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P + ½ρv² + ρgh = sabit</div><button class="expand-btn" onclick="toggleExpand(this,'card-basinc-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">İdeal akışkanlar için enerji korunumu ilkesidir.</div></div><div class="formula-card" id="card-basinc-5" onclick="openFmModal('basinc',5,event)">
+        <div class="formula-name">
+          Süreklilik Denklemi
+          <button class="bm-btn" onclick="toggleBM(event,'basinc-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">A₁·v₁ = A₂·v₂</div><div class="formula-vars"><span class="var-tag">A<span> = kesit alanı</span></span><span class="var-tag">v<span> = akış hızı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-basinc-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Sıkıştırılamaz akışkanlar için geçerlidir.</div></div></div></div><div class="topic-section" id="section-sicaklik">
+      <div class="topic-header">
+        <span class="topic-icon">🌡️</span>
+        <div class="topic-title-group">
+          <h2>Isı &amp; Sıcaklık</h2>
+          <p>Termodinamik ve ısı alışverişi</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-sicaklik-0" onclick="openFmModal('sicaklik',0,event)">
+        <div class="formula-name">
+          Isı
+          <button class="bm-btn" onclick="toggleBM(event,'sicaklik-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Q = m · c · ΔT</div><div class="formula-vars"><span class="var-tag">Q<span> = ısı (J)</span></span><span class="var-tag">m<span> = kütle (kg)</span></span><span class="var-tag">c<span> = özısı (J/kg·K)</span></span><span class="var-tag">ΔT<span> = sıcaklık farkı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-sicaklik-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">Su için c = 4200 J/kg·K</div></div><div class="formula-card" id="card-sicaklik-1" onclick="openFmModal('sicaklik',1,event)">
+        <div class="formula-name">
+          Hal Değişimi Isısı
+          <button class="bm-btn" onclick="toggleBM(event,'sicaklik-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Q = m · L</div><div class="formula-vars"><span class="var-tag">L<span> = gizli ısı (J/kg)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-sicaklik-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Erime veya buharlaşmada sıcaklık değişmez.</div></div><div class="formula-card" id="card-sicaklik-2" onclick="openFmModal('sicaklik',2,event)">
+        <div class="formula-name">
+          Isı Dengesi
+          <button class="bm-btn" onclick="toggleBM(event,'sicaklik-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Q_verilen = Q_alınan</div><button class="expand-btn" onclick="toggleExpand(this,'card-sicaklik-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Kalorimetri problemlerinin temelidir.</div></div><div class="formula-card" id="card-sicaklik-3" onclick="openFmModal('sicaklik',3,event)">
+        <div class="formula-name">
+          Genleşme
+          <button class="bm-btn" onclick="toggleBM(event,'sicaklik-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ΔL = α · L₀ · ΔT</div><div class="formula-vars"><span class="var-tag">α<span> = doğrusal genleşme katsayısı</span></span><span class="var-tag">L₀<span> = başlangıç uzunluğu</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-sicaklik-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Hacim genleşmesi: ΔV = 3α · V₀ · ΔT</div></div><div class="formula-card" id="card-sicaklik-4" onclick="openFmModal('sicaklik',4,event)">
+        <div class="formula-name">
+          İdeal Gaz
+          <button class="bm-btn" onclick="toggleBM(event,'sicaklik-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P·V = n·R·T</div><div class="formula-vars"><span class="var-tag">n<span> = mol sayısı</span></span><span class="var-tag">R<span> = 8,314 J/mol·K</span></span><span class="var-tag">T<span> = Kelvin cinsinden</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-sicaklik-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">T(K) = T(°C) + 273</div></div><div class="formula-card" id="card-sicaklik-5" onclick="openFmModal('sicaklik',5,event)">
+        <div class="formula-name">
+          Carnot Verimi
+          <button class="bm-btn" onclick="toggleBM(event,'sicaklik-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">η = 1 − T_soğuk / T_sıcak   (×100 ile %)</div><div class="formula-vars"><span class="var-tag">η<span> = verim (0 ile 1 arası)</span></span><span class="var-tag">T_soğuk<span> = soğuk rezervuar sıcaklığı (K)</span></span><span class="var-tag">T_sıcak<span> = sıcak rezervuar sıcaklığı (K)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-sicaklik-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">T mutlaka Kelvin cinsinden yazılmalıdır! T(K) = T(°C) + 273. Gerçek ısı motorları her zaman Carnot veriminin altında kalır. η = 1 yalnızca T_soğuk = 0 K olunca mümkün olur (ulaşılamaz).</div></div></div></div><div class="topic-section" id="section-dalgalar">
+      <div class="topic-header">
+        <span class="topic-icon">〰️</span>
+        <div class="topic-title-group">
+          <h2>Dalgalar &amp; Ses</h2>
+          <p>Mekanik dalgalar, rezonans, Doppler</p>
+        </div>
+        <div class="topic-level">
+          <span class="level-pill tyt">TYT</span>
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-dalgalar-0" onclick="openFmModal('dalgalar',0,event)">
+        <div class="formula-name">
+          Dalga Hızı
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v = λ · f = λ / T</div><div class="formula-vars"><span class="var-tag">v<span> = dalga hızı (m/s)</span></span><span class="var-tag">λ<span> = dalga boyu (m)</span></span><span class="var-tag">f<span> = frekans (Hz)</span></span><span class="var-tag">T<span> = periyot (s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">Ortam değişince f sabit kalır, λ değişir. Hız yalnızca ortama bağlıdır.</div></div><div class="formula-card" id="card-dalgalar-1" onclick="openFmModal('dalgalar',1,event)">
+        <div class="formula-name">
+          Gerdirili Telde Dalga Hızı
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">v = √(F / μ)   |   μ = m/L</div><div class="formula-vars"><span class="var-tag">F<span> = tel gerilimi (N)</span></span><span class="var-tag">μ<span> = birim uzunluk kütlesi (kg/m)</span></span><span class="var-tag">L<span> = tel uzunluğu</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Gerilim arttıkça hız artar. Telin kalınlığı arttıkça μ artar, hız azalır.</div></div><div class="formula-card" id="card-dalgalar-2" onclick="openFmModal('dalgalar',2,event)">
+        <div class="formula-name">
+          Telde / Açık Borudaki Duran Dalga
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">λₙ = 2L/n   |   fₙ = n·v/(2L)</div><div class="formula-vars"><span class="var-tag">n<span> = harmonik sayısı (n = 1,2,3…)</span></span><span class="var-tag">L<span> = tel veya boru uzunluğu (m)</span></span><span class="var-tag">v<span> = dalga hızı (m/s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Tel ve iki ucu açık boru: tüm harmonikler oluşur. Bir ucu kapalı boru: λₙ = 4L/(2n−1), fₙ = (2n−1)·v/(4L) — yalnızca tek harmonikler. n=1: temel harmonik.</div></div><div class="formula-card" id="card-dalgalar-3" onclick="openFmModal('dalgalar',3,event)">
+        <div class="formula-name">
+          Doppler Etkisi
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">f' = f · (v ± vₐ) / (v ∓ v_k)</div><div class="formula-vars"><span class="var-tag">vₐ<span> = alıcı hızı</span></span><span class="var-tag">v_k<span> = kaynak hızı</span></span><span class="var-tag">v<span> = sesteki dalga hızı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Alıcı kaynağa yaklaşırsa üstte +, uzaklaşırsa −. Kaynak alıcıya yaklaşırsa altta −, uzaklaşırsa +. Yaklaşma frekansı artırır, uzaklaşma azaltır.</div></div><div class="formula-card" id="card-dalgalar-4" onclick="openFmModal('dalgalar',4,event)">
+        <div class="formula-name">
+          Ses Şiddeti Düzeyi (dB)
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">L = 10 · log(I / I₀)</div><div class="formula-vars"><span class="var-tag">I₀<span> = 10⁻¹² W/m² (eşik şiddeti)</span></span><span class="var-tag">I<span> = ses şiddeti (W/m²)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">10 dB artış → şiddet 10 kat artar. 20 dB → 100 kat, 30 dB → 1000 kat.</div></div><div class="formula-card" id="card-dalgalar-5" onclick="openFmModal('dalgalar',5,event)">
+        <div class="formula-name">
+          Basit Sarkaç Periyodu
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">T = 2π · √(L / g)</div><div class="formula-vars"><span class="var-tag">T<span> = periyot (s)</span></span><span class="var-tag">L<span> = ip uzunluğu (m)</span></span><span class="var-tag">g<span> = yerçekimi ivmesi</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Genlikten ve kütleden bağımsızdır. Yalnızca küçük açılar için (&lt; 15°) geçerlidir.</div></div><div class="formula-card" id="card-dalgalar-6" onclick="openFmModal('dalgalar',6,event)">
+        <div class="formula-name">
+          Yay-Kütle Sarkacı Periyodu
+          <button class="bm-btn" onclick="toggleBM(event,'dalgalar-6')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">T = 2π · √(m / k)</div><div class="formula-vars"><span class="var-tag">m<span> = asılı kütle (kg)</span></span><span class="var-tag">k<span> = yay sabiti (N/m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-dalgalar-6')">ℹ️ Açıklama</button>
+        <div class="formula-note">Genlikten bağımsızdır. k arttıkça (sert yay) periyot azalır.</div></div></div></div><div class="topic-section" id="section-elektrik">
+      <div class="topic-header">
+        <span class="topic-icon">⚡</span>
+        <div class="topic-title-group">
+          <h2>Elektrik &amp; Manyetizma</h2>
+          <p>Elektrostatik, devreler, elektromanyetizma</p>
+        </div>
+        <div class="topic-level">
+          
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-elektrik-0" onclick="openFmModal('elektrik',0,event)">
+        <div class="formula-name">
+          Coulomb Yasası
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">F = k · |q₁·q₂| / r²</div><div class="formula-vars"><span class="var-tag">k<span> = 9×10⁹ N·m²/C² (yaklaşık değer)</span></span><span class="var-tag">q<span> = yük (C)</span></span><span class="var-tag">r<span> = yükler arası uzaklık (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">k = 1/(4πε₀). Aynı işaretli yükler iter, zıt işaretliler çeker.</div></div><div class="formula-card" id="card-elektrik-1" onclick="openFmModal('elektrik',1,event)">
+        <div class="formula-name">
+          Elektrik Alan
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">E = F / q₀ = k·Q / r²</div><div class="formula-vars"><span class="var-tag">E<span> = elektrik alan şiddeti (N/C = V/m)</span></span><span class="var-tag">q₀<span> = test yükü (C)</span></span><span class="var-tag">Q<span> = kaynak yük (C)</span></span><span class="var-tag">r<span> = uzaklık (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">Vektörel büyüklük. Pozitif yükten dışarı, negatif yüke doğru yönelir. Birden fazla yük varsa süperpozisyon ilkesi uygulanır: E_toplam = ΣEᵢ.</div></div><div class="formula-card" id="card-elektrik-2" onclick="openFmModal('elektrik',2,event)">
+        <div class="formula-name">
+          Düzgün Elektrik Alan
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">E = V / d   |   F = q·E</div><div class="formula-vars"><span class="var-tag">V<span> = plakalar arası gerilim (V)</span></span><span class="var-tag">d<span> = plaka aralığı (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Paralel plakalarda alan düzgündür. Yük hareketi: W = q·V</div></div><div class="formula-card" id="card-elektrik-3" onclick="openFmModal('elektrik',3,event)">
+        <div class="formula-name">
+          Elektrik Potansiyel
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">V = k · Q / r   |   W = q·ΔV</div><div class="formula-vars"><span class="var-tag">V<span> = potansiyel (V = J/C)</span></span><span class="var-tag">W<span> = yapılan iş (J)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Skaler büyüklük. E = −ΔV/Δr (alan, potansiyelin gradyanının negatifi).</div></div><div class="formula-card" id="card-elektrik-4" onclick="openFmModal('elektrik',4,event)">
+        <div class="formula-name">
+          Kondansatör Kapasitesi
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">C = Q / V = ε₀·A / d</div><div class="formula-vars"><span class="var-tag">C<span> = kapasite (F)</span></span><span class="var-tag">Q<span> = yük (C)</span></span><span class="var-tag">V<span> = gerilim (V)</span></span><span class="var-tag">ε₀<span> = 8,85×10⁻¹² F/m</span></span><span class="var-tag">A<span> = plaka alanı (m²)</span></span><span class="var-tag">d<span> = plaka aralığı (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">Paralel bağlı: C_top = C₁+C₂. Seri bağlı: 1/C_top = 1/C₁+1/C₂. Depolanan enerji: U = ½CV² = Q²/(2C) = QV/2.</div></div><div class="formula-card" id="card-elektrik-5" onclick="openFmModal('elektrik',5,event)">
+        <div class="formula-name">
+          Ohm Yasası &amp; Direnç
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">V = I·R   |   R = ρ·L/A</div><div class="formula-vars"><span class="var-tag">V<span> = gerilim (V)</span></span><span class="var-tag">I<span> = akım (A)</span></span><span class="var-tag">R<span> = direnç (Ω)</span></span><span class="var-tag">ρ<span> = özdirenç (Ω·m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Seri: R = R₁+R₂. Paralel: 1/R = 1/R₁+1/R₂.</div></div><div class="formula-card" id="card-elektrik-6" onclick="openFmModal('elektrik',6,event)">
+        <div class="formula-name">
+          Elektrik Gücü &amp; Enerji
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-6')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P = V·I = I²·R = V²/R   |   W = P·t</div><div class="formula-vars"><span class="var-tag">P<span> = güç (W)</span></span><span class="var-tag">W<span> = elektrik enerjisi (J)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-6')">ℹ️ Açıklama</button>
+        <div class="formula-note">Joule ısınması: Q = I²·R·t. 1 kWh = 3,6×10⁶ J</div></div><div class="formula-card" id="card-elektrik-7" onclick="openFmModal('elektrik',7,event)">
+        <div class="formula-name">
+          Kirchhoff Akım Yasası (KAY)
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-7')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ΣI_giren = ΣI_çıkan</div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-7')">ℹ️ Açıklama</button>
+        <div class="formula-note">Düğüm noktasında toplam giren akım = toplam çıkan akım (yük korunumu).</div></div><div class="formula-card" id="card-elektrik-8" onclick="openFmModal('elektrik',8,event)">
+        <div class="formula-name">
+          Kirchhoff Gerilim Yasası (KGY)
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-8')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ΣV = 0  (kapalı çevrim)</div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-8')">ℹ️ Açıklama</button>
+        <div class="formula-note">Kapalı çevrimdeki gerilim düşümlerinin toplamı sıfırdır (enerji korunumu).</div></div><div class="formula-card" id="card-elektrik-9" onclick="openFmModal('elektrik',9,event)">
+        <div class="formula-name">
+          Manyetik Kuvvet (hareketli yük)
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-9')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">F = q·v·B·sinθ</div><div class="formula-vars"><span class="var-tag">B<span> = manyetik alan (T = Wb/m²)</span></span><span class="var-tag">q<span> = yük (C)</span></span><span class="var-tag">v<span> = hız (m/s)</span></span><span class="var-tag">θ<span> = v ile B arası açı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-9')">ℹ️ Açıklama</button>
+        <div class="formula-note">Lorentz kuvveti. θ = 90° maksimum. Yönü: sağ el kuralı (pozitif yük için).</div></div><div class="formula-card" id="card-elektrik-10" onclick="openFmModal('elektrik',10,event)">
+        <div class="formula-name">
+          Manyetik Kuvvet (akım taşıyan tel)
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-10')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">F = B·I·L·sinθ</div><div class="formula-vars"><span class="var-tag">L<span> = tel uzunluğu (m)</span></span><span class="var-tag">I<span> = akım (A)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-10')">ℹ️ Açıklama</button>
+        <div class="formula-note">Tel alana paralelse (θ=0°) kuvvet sıfır; dik ise maksimum.</div></div><div class="formula-card" id="card-elektrik-11" onclick="openFmModal('elektrik',11,event)">
+        <div class="formula-name">
+          Faraday İndüksiyon Yasası
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-11')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ε = −N · ΔΦ/Δt   |   Φ = B·A·cosθ</div><div class="formula-vars"><span class="var-tag">ε<span> = indüklenen emk (V)</span></span><span class="var-tag">Φ<span> = manyetik akı (Wb)</span></span><span class="var-tag">N<span> = sarım sayısı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-11')">ℹ️ Açıklama</button>
+        <div class="formula-note">Lenz yasası: negatif işaret, indüklenen akımın değişime karşı olduğunu gösterir.</div></div><div class="formula-card" id="card-elektrik-12" onclick="openFmModal('elektrik',12,event)">
+        <div class="formula-name">
+          Transformatör
+          <button class="bm-btn" onclick="toggleBM(event,'elektrik-12')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">V₁/V₂ = N₁/N₂   |   I₁/I₂ = N₂/N₁</div><div class="formula-vars"><span class="var-tag">N<span> = sarım sayısı</span></span><span class="var-tag">V<span> = gerilim (V)</span></span><span class="var-tag">I<span> = akım (A)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-elektrik-12')">ℹ️ Açıklama</button>
+        <div class="formula-note">İdeal transformatörde güç korunur: P₁ = P₂ → V₁·I₁ = V₂·I₂. Yükseltici: N₂&gt;N₁ → V₂&gt;V₁ ama I₂<i₁. alçaltıcı:="" n₂<n₁.<="" div=""></i₁.></div></div></div><div class="topic-section" id="section-optik">
+      <div class="topic-header">
+        <span class="topic-icon">🔭</span>
+        <div class="topic-title-group">
+          <h2>Optik</h2>
+          <p>Geometrik optik, aynalar ve mercekler</p>
+        </div>
+        <div class="topic-level">
+          
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-optik-0" onclick="openFmModal('optik',0,event)">
+        <div class="formula-name">
+          Snell Yasası (Kırılma)
+          <button class="bm-btn" onclick="toggleBM(event,'optik-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">n₁ · sin θ₁ = n₂ · sin θ₂</div><div class="formula-vars"><span class="var-tag">n<span> = kırılma indisi (boyutsuz)</span></span><span class="var-tag">θ<span> = yüzey normaline göre açı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-optik-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">n = c/v (vakumda c = 3×10⁸ m/s). Cam için n ≈ 1,5; su için n ≈ 1,33. Işık yoğun ortamdan seyrek ortama geçerken kırıcı açı büyür. Kritik açıda tam yansıma başlar: sin θ_k = n₂/n₁.</div></div><div class="formula-card" id="card-optik-1" onclick="openFmModal('optik',1,event)">
+        <div class="formula-name">
+          İnce Mercek / Ayna Formülü
+          <button class="bm-btn" onclick="toggleBM(event,'optik-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">1/f = 1/d_o + 1/d_i</div><div class="formula-vars"><span class="var-tag">f<span> = odak uzaklığı (m)</span></span><span class="var-tag">d_o<span> = cisim uzaklığı (m)</span></span><span class="var-tag">d_i<span> = görüntü uzaklığı (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-optik-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">İşaret kuralı: gerçek cisim d_o &gt; 0. Gerçek görüntü d_i &gt; 0 (mercekte aynı taraf, aynada karşı taraf). Sanal görüntü d_i &lt; 0. Yakınsak mercek/çukur ayna f &gt; 0; ıraksak mercek/tümsek ayna f &lt; 0.</div></div><div class="formula-card" id="card-optik-2" onclick="openFmModal('optik',2,event)">
+        <div class="formula-name">
+          Büyütme
+          <button class="bm-btn" onclick="toggleBM(event,'optik-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">m = h_i / h_o = −d_i / d_o</div><div class="formula-vars"><span class="var-tag">m<span> = doğrusal büyütme (boyutsuz)</span></span><span class="var-tag">h_i<span> = görüntü boyu</span></span><span class="var-tag">h_o<span> = cisim boyu</span></span><span class="var-tag">d_i<span> = görüntü uzaklığı</span></span><span class="var-tag">d_o<span> = cisim uzaklığı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-optik-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">|m| &gt; 1: büyütülmüş. |m| &lt; 1: küçültülmüş. m &gt; 0: düz görüntü. m &lt; 0: ters görüntü. Sanal görüntüde d_i &lt; 0 alınır.</div></div><div class="formula-card" id="card-optik-3" onclick="openFmModal('optik',3,event)">
+        <div class="formula-name">
+          Küresel Ayna Odak
+          <button class="bm-btn" onclick="toggleBM(event,'optik-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">f = R / 2</div><div class="formula-vars"><span class="var-tag">R<span> = eğrilik yarıçapı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-optik-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Çukur aynada f &gt; 0, tümsek aynada f &lt; 0.</div></div><div class="formula-card" id="card-optik-4" onclick="openFmModal('optik',4,event)">
+        <div class="formula-name">
+          İnce Mercek Gücü
+          <button class="bm-btn" onclick="toggleBM(event,'optik-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">P = 1/f (dioptri)</div><div class="formula-vars"><span class="var-tag">P<span> = lens gücü (D)</span></span><span class="var-tag">f<span> = odak uzaklığı (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-optik-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">Birleşik merceklerde: P = P₁ + P₂</div></div></div></div><div class="topic-section" id="section-modern">
+      <div class="topic-header">
+        <span class="topic-icon">⚛️</span>
+        <div class="topic-title-group">
+          <h2>Modern Fizik</h2>
+          <p>Kuantum, atom ve nükleer fizik</p>
+        </div>
+        <div class="topic-level">
+          
+          <span class="level-pill ayt">AYT</span>
+        </div>
+      </div>
+      <div class="formula-grid"><div class="formula-card" id="card-modern-0" onclick="openFmModal('modern',0,event)">
+        <div class="formula-name">
+          Foton Enerjisi (Planck)
+          <button class="bm-btn" onclick="toggleBM(event,'modern-0')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">E = h·f = h·c/λ</div><div class="formula-vars"><span class="var-tag">h<span> = 6,626×10⁻³⁴ J·s</span></span><span class="var-tag">f<span> = frekans (Hz)</span></span><span class="var-tag">c<span> = 3×10⁸ m/s</span></span><span class="var-tag">λ<span> = dalga boyu (m)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-0')">ℹ️ Açıklama</button>
+        <div class="formula-note">1 eV = 1,6×10⁻¹⁹ J. Işığın hem dalga hem parçacık özelliği vardır (dalga-parçacık dualitesi).</div></div><div class="formula-card" id="card-modern-1" onclick="openFmModal('modern',1,event)">
+        <div class="formula-name">
+          Fotoelektrik Etki
+          <button class="bm-btn" onclick="toggleBM(event,'modern-1')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">E_k = h·f − φ = h·f − h·f₀</div><div class="formula-vars"><span class="var-tag">E_k<span> = sökülen elektronun kinetik enerjisi</span></span><span class="var-tag">φ<span> = iş fonksiyonu (J veya eV)</span></span><span class="var-tag">f₀<span> = eşik frekansı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-1')">ℹ️ Açıklama</button>
+        <div class="formula-note">f &lt; f₀ ise ışık şiddeti ne olursa olsun elektron sökülmez.</div></div><div class="formula-card" id="card-modern-2" onclick="openFmModal('modern',2,event)">
+        <div class="formula-name">
+          De Broglie Madde Dalgası
+          <button class="bm-btn" onclick="toggleBM(event,'modern-2')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">λ = h / p = h / (m·v)</div><div class="formula-vars"><span class="var-tag">λ<span> = madde dalgaboyu (m)</span></span><span class="var-tag">p<span> = momentum (kg·m/s)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-2')">ℹ️ Açıklama</button>
+        <div class="formula-note">Her madde parçacığının bir dalga boyu vardır. Büyük kütlelerde ihmal edilebilir düzeydedir.</div></div><div class="formula-card" id="card-modern-3" onclick="openFmModal('modern',3,event)">
+        <div class="formula-name">
+          Bohr Modeli — Enerji
+          <button class="bm-btn" onclick="toggleBM(event,'modern-3')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">Eₙ = −13,6 / n²  (eV)</div><div class="formula-vars"><span class="var-tag">n<span> = baş kuantum sayısı (n = 1, 2, 3…)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-3')">ℹ️ Açıklama</button>
+        <div class="formula-note">Yalnızca hidrojen atomu için geçerlidir. n=1: temel hal (−13,6 eV). Negatif işaret elektronu bağlı tutar. İyonizasyon enerjisi = +13,6 eV (n=∞ e çıkarmak için).</div></div><div class="formula-card" id="card-modern-4" onclick="openFmModal('modern',4,event)">
+        <div class="formula-name">
+          Bohr Modeli — Yarıçap
+          <button class="bm-btn" onclick="toggleBM(event,'modern-4')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">rₙ = n²·a₀   |   a₀ = 0,053 nm</div><div class="formula-vars"><span class="var-tag">a₀<span> = Bohr yarıçapı = 5,3×10⁻¹¹ m</span></span><span class="var-tag">n<span> = kuantum sayısı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-4')">ℹ️ Açıklama</button>
+        <div class="formula-note">n arttıkça yörünge yarıçapı n² ile büyür.</div></div><div class="formula-card" id="card-modern-5" onclick="openFmModal('modern',5,event)">
+        <div class="formula-name">
+          Spektral Geçiş Enerjisi
+          <button class="bm-btn" onclick="toggleBM(event,'modern-5')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">ΔE = Eₙ₂ − Eₙ₁ = h·f = h·c/λ</div><div class="formula-vars"><span class="var-tag">ΔE<span> = enerji farkı</span></span><span class="var-tag">f<span> = yayılan/soğurulan foton frekansı</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-5')">ℹ️ Açıklama</button>
+        <div class="formula-note">Elektron üst seviyeden alta inerken foton yayar, alttan üste çıkarken soğurur.</div></div><div class="formula-card" id="card-modern-6" onclick="openFmModal('modern',6,event)">
+        <div class="formula-name">
+          Radyoaktif Bozunma
+          <button class="bm-btn" onclick="toggleBM(event,'modern-6')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">N(t) = N₀ · (½)^(t/T½)   |   A = λ·N</div><div class="formula-vars"><span class="var-tag">N₀<span> = başlangıç çekirdek sayısı</span></span><span class="var-tag">T½<span> = yarı ömür (s)</span></span><span class="var-tag">A<span> = aktivite (Bq = bozunma/s)</span></span><span class="var-tag">λ<span> = bozunma sabiti (s⁻¹)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-6')">ℹ️ Açıklama</button>
+        <div class="formula-note">Her T½ sürede çekirdek sayısı ve aktivite yarıya düşer. λ = ln2/T½ ≈ 0,693/T½. A₀ = λ·N₀.</div></div><div class="formula-card" id="card-modern-7" onclick="openFmModal('modern',7,event)">
+        <div class="formula-name">
+          Kütle-Enerji Denkliği
+          <button class="bm-btn" onclick="toggleBM(event,'modern-7')" title="Kaydet">⭐</button>
+        </div>
+        <div class="formula-eq">E = Δm · c²</div><div class="formula-vars"><span class="var-tag">Δm<span> = kütle defekti (kg veya u)</span></span><span class="var-tag">c<span> = 3×10⁸ m/s</span></span><span class="var-tag">E<span> = bağlanma enerjisi (J veya MeV)</span></span></div><button class="expand-btn" onclick="toggleExpand(this,'card-modern-7')">ℹ️ Açıklama</button>
+        <div class="formula-note">1 u = 1,66×10⁻²⁷ kg = 931,5 MeV/c². Çekirdekteki nükleonlar serbest hâlden daha az kütlelidir; fark bağlanma enerjisine dönüşmüştür.</div></div></div></div></div></main>
 </div>
 
 <footer style="
@@ -2448,162 +3130,11 @@ function adminSaveAll() {
 
   // Güncellenmiş HTML'i indir
   var htmlContent = document.documentElement.outerHTML;
-  var overrideTag = '<script id="phyBakedOverrides">(function(){var ov=' +
-    JSON.stringify(newEdits) + ';if(!window.__phyOverrides)window.__phyOverrides=ov;})();<\/script>';
-  // Eğer zaten varsa güncelle, yoksa ekle
-  if (htmlContent.indexOf('id="phyBakedOverrides"') !== -1) {
-    htmlContent = htmlContent.replace(/<script id="phyBakedOverrides">[\s\S]*?<\/script>/, overrideTag.replace('<\/', '</'));
-  } else {
-    htmlContent = htmlContent.replace('</head>', overrideTag.replace('<\/', '</') + '</head>');
-  }
-
-  var blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
-  var url  = URL.createObjectURL(blob);
-  var a    = document.createElement('a');
-  a.href   = url;
-  a.download = 'index.html';
-  a.click();
-  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
-
-  setAdminStatus("✅ İndirildi! GitHub'a push et → herkes görsün.", 'saved');
-  btn.textContent = '💾 Kaydet & İndir';
-  btn.disabled = false;
-}
-
-function adminResetAll() {
-  if (!confirm('Tüm özel düzenlemeler silinsin mi?')) return;
-  localStorage.removeItem(ADMIN_STORAGE_KEY);
-  adminEdits = {};
-  alert('Sıfırlandı! Sayfa yenilenecek.');
-  location.reload();
-}
-
-function applyOverridesToData(overrides) {
-  if (!overrides) return;
-  DATA.forEach(function(topic) {
-    topic.formulas.forEach(function(f, fi) {
-      var ov = overrides[topic.id + '-' + fi];
-      if (ov) {
-        if (ov.eq   !== undefined) f.eq   = ov.eq;
-        if (ov.note !== undefined) f.note = ov.note;
-      }
-    });
-  });
-}
-
-// Sayfa açılışında baked-in override'ları uygula
-(function() {
-  try { if (window.__phyOverrides) applyOverridesToData(window.__phyOverrides); } catch(e) {}
-})();
-// ──────────────────────────────────────────────────────
-
-// ─── ZİYARETÇİ SAYACI ─────────────────────────────────
-var VISITOR_SEEN_KEY = 'phyVisitorSeen';
-function incrementVisitorCount() {
-  if (localStorage.getItem(VISITOR_SEEN_KEY)) return;
-  fetch('https://api.countapi.xyz/hit/batucodes1-github-io/yks-fizik-visitors')
-    .then(function(){ localStorage.setItem(VISITOR_SEEN_KEY, '1'); })
-    .catch(function(){});
-}
-// ──────────────────────────────────────────────────────
-
-// ──────────────────────────────────────────────────────
-
-// ─── LOADER + İSİM GİRİŞ ─────────────────────────────
-(function () {
-  const duration = 3000 + Math.random() * 2000;
-  setTimeout(function () {
-    const loader = document.getElementById('loader');
-    loader.classList.add('hide');
-    setTimeout(function() { loader.remove(); }, 900);
-
-    const savedName = localStorage.getItem('phyUserName');
-    if (savedName) {
-      revealSite(savedName);
-    } else {
-      const ns = document.getElementById('nameScreen');
-      ns.style.display = 'flex';
-      requestAnimationFrame(function() { ns.classList.add('visible'); });
-      setTimeout(function() {
-        const inp = document.getElementById('nameInput');
-        if (inp) inp.focus();
-      }, 400);
-    }
-  }, duration);
-})();
-
-function submitName() {
-  const inp = document.getElementById('nameInput');
-  const name = inp ? inp.value.trim() : '';
-  if (!name) {
-    inp.style.borderColor = 'var(--accent2)';
-    inp.placeholder = 'Lütfen bir isim girin...';
-    setTimeout(function() { inp.style.borderColor = ''; inp.placeholder = 'İsminizi girin...'; }, 1500);
-    return;
-  }
-  if (name === 'Batuhan8893') {
-    document.getElementById('nameScreen').style.display = 'none';
-    openAdminPanel();
-    return;
-  }
-  localStorage.setItem('phyUserName', name);
-  closeNameScreen(name);
-}
-
-function submitGuest() {
-  localStorage.setItem('phyUserName', 'Misafir');
-  closeNameScreen('Misafir');
-}
-
-function closeNameScreen(name) {
-  const ns = document.getElementById('nameScreen');
-  ns.classList.add('hiding');
-  setTimeout(function() {
-    ns.style.display = 'none';
-    ns.classList.remove('visible', 'hiding');
-    revealSite(name);
-  }, 500);
-}
-// ──────────────────────────────────────────────────────
-
-function revealSite(name) {
-  incrementVisitorCount(); // Her yeni ziyarette say
-  document.body.classList.remove('loading');
-  document.body.classList.add('site-reveal');
-
-  // Header welcome typewriter
-  setTimeout(function () {
-    const el = document.getElementById('welcomeType');
-    const displayName = (name && name !== 'Misafir') ? name : null;
-    const text = displayName
-      ? `✦ Hoş Geldin, ${displayName} ✦`
-      : '✦ Hoş Geldiniz... ✦';
-    let i = 0;
-    function type() {
-      if (i <= text.length) {
-        el.textContent = text.slice(0, i++);
-        setTimeout(type, 60);
-      }
-    }
-    type();
-  }, 400);
-
-  // Tema seçici — daha önce tema seçilmemişse göster
-  const savedTheme = localStorage.getItem('phyTheme');
-  if (!savedTheme) {
-    setTimeout(function () {
-      const picker = document.getElementById('themePicker');
-      if (picker) requestAnimationFrame(() => picker.classList.add('visible'));
-    }, 800);
-  }
-}
-// ──────────────────────────────────────────────────────
-buildSidebar();
-buildContent();
-</script>
+  var overrideTag = '<script id="phyBakedOverrides">(function(){var ov={"basinc-1":{"eq":"P = h · d · g","note":"P-Basınç,h-Derinlik,d-Sıvı yoğunluğu,g-Yer çekim ivmesi."}};if(!window.__phyOverrides)window.__phyOverrides=ov;})();</script>
 <!-- YUKARI BUTONU -->
-<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Yukarı çık">↑</button>
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Yukarı çık" class="visible">↑</button>
 <!-- /YUKARI BUTONU -->
 
-</body>
-</html>
+
+
+</body></html>
